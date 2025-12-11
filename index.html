@@ -1,0 +1,1614 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="שירותי CIO חיצוני - ניר רם | שעת ייעוץ חינם לחברות קטנות ובינוניות">
+    <title>ניר רם - CIO as a Service | שעת ייעוץ חינם</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Assistant:wght@300;400;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Assistant', sans-serif;
+            background: #000000;
+            color: #ffffff;
+            overflow-x: hidden;
+            line-height: 1.6;
+        }
+        
+        /* Custom Scrollbar - Hollywood Tech Style */
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+        
+        ::-webkit-scrollbar-track {
+            background: rgba(0, 0, 0, 0.9);
+            border-right: 1px solid rgba(0, 200, 150, 0.1);
+        }
+        
+        ::-webkit-scrollbar-thumb {
+            background: linear-gradient(180deg, #00C896 0%, #00A8E8 100%);
+            border-radius: 10px;
+            border: 2px solid rgba(0, 0, 0, 0.9);
+            box-shadow: 0 0 10px rgba(0, 200, 150, 0.4);
+            transition: all 0.3s ease;
+        }
+        
+        ::-webkit-scrollbar-thumb:hover {
+            background: linear-gradient(180deg, #00E8B0 0%, #00C0FF 100%);
+            box-shadow: 0 0 15px rgba(0, 200, 150, 0.8);
+        }
+        
+        /* Firefox Scrollbar */
+        * {
+            scrollbar-width: thin;
+            scrollbar-color: #00C896 rgba(0, 0, 0, 0.9);
+        }
+        
+        /* Animated tech background */
+        .bg-animation {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            background: radial-gradient(circle at 20% 50%, rgba(0, 100, 200, 0.08) 0%, transparent 50%),
+                        radial-gradient(circle at 80% 80%, rgba(0, 200, 150, 0.08) 0%, transparent 50%),
+                        #000000;
+        }
+        
+        /* Grid overlay */
+        .grid-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            background-image: 
+                linear-gradient(rgba(0, 200, 150, 0.02) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(0, 200, 150, 0.02) 1px, transparent 1px);
+            background-size: 50px 50px;
+            opacity: 0.3;
+        }
+        
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            background: rgba(0, 0, 0, 0.95);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(0, 200, 150, 0.1);
+            padding: 20px 0;
+        }
+        
+        .nav-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 22px;
+            font-weight: 900;
+            background: linear-gradient(135deg, #00C896 0%, #00A8E8 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .logo:hover {
+            transform: scale(1.05);
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 40px;
+            align-items: center;
+        }
+        
+        .nav-link {
+            color: #cccccc;
+            text-decoration: none;
+            font-size: 16px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            position: relative;
+        }
+        
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            right: 0;
+            width: 0;
+            height: 2px;
+            background: linear-gradient(135deg, #00C896 0%, #00A8E8 100%);
+            transition: width 0.3s ease;
+        }
+        
+        .nav-link:hover {
+            color: #00C896;
+        }
+        
+        .nav-link:hover::after {
+            width: 100%;
+        }
+        
+        .nav-link.active {
+            color: #00C896;
+        }
+        
+        .cta-nav-btn {
+            padding: 12px 28px;
+            background: linear-gradient(135deg, #00C896 0%, #00A8E8 100%);
+            color: #000;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 15px;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            white-space: nowrap;
+        }
+        
+        .cta-nav-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(0, 200, 150, 0.5);
+        }
+        
+        /* Sections */
+        .section {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 120px 40px 60px;
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+        
+        .section.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .section.hidden {
+            display: none;
+        }
+        
+        .container {
+            max-width: 1200px;
+            width: 100%;
+        }
+        
+        /* Hero Section */
+        .hero-content {
+            text-align: center;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        
+        .hero-badge {
+            display: inline-block;
+            padding: 10px 25px;
+            background: rgba(0, 200, 150, 0.1);
+            border: 1px solid rgba(0, 200, 150, 0.3);
+            border-radius: 50px;
+            font-size: 14px;
+            font-weight: 600;
+            color: #00C896;
+            margin-bottom: 30px;
+            letter-spacing: 1px;
+        }
+        
+        .hero-title {
+            font-size: 72px;
+            font-weight: 900;
+            line-height: 1.1;
+            margin-bottom: 30px;
+            background: linear-gradient(135deg, #ffffff 0%, #00C896 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .hero-subtitle {
+            font-size: 28px;
+            color: #cccccc;
+            margin-bottom: 20px;
+            font-weight: 300;
+            line-height: 1.5;
+        }
+        
+        .hero-description {
+            font-size: 18px;
+            color: #999999;
+            margin-bottom: 50px;
+            line-height: 1.8;
+        }
+        
+        .highlight {
+            color: #00C896;
+            font-weight: 700;
+        }
+        
+        /* Stats */
+        .stats {
+            display: flex;
+            gap: 60px;
+            justify-content: center;
+            margin: 40px 0;
+            flex-wrap: wrap;
+        }
+        
+        .stat {
+            text-align: center;
+        }
+        
+        .stat-number {
+            font-size: 48px;
+            font-weight: 900;
+            background: linear-gradient(135deg, #00C896 0%, #00A8E8 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 5px;
+        }
+        
+        .stat-label {
+            font-size: 14px;
+            color: #999;
+            font-weight: 300;
+        }
+        
+        /* Section Title */
+        .section-title {
+            font-size: 56px;
+            font-weight: 900;
+            margin-bottom: 20px;
+            background: linear-gradient(135deg, #ffffff 0%, #00C896 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-align: center;
+        }
+        
+        .section-subtitle {
+            font-size: 20px;
+            color: #cccccc;
+            text-align: center;
+            margin-bottom: 60px;
+            font-weight: 300;
+        }
+        
+        /* Services Grid */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        .service-card {
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.02) 0%, rgba(0, 200, 150, 0.03) 100%);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: 20px;
+            padding: 40px 30px;
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+            cursor: pointer;
+        }
+        
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(0, 200, 150, 0.1) 0%, transparent 100%);
+            opacity: 0;
+            transition: opacity 0.4s ease;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-10px);
+            border-color: rgba(0, 200, 150, 0.5);
+            box-shadow: 0 20px 60px rgba(0, 200, 150, 0.3);
+        }
+        
+        .service-card:hover::before {
+            opacity: 1;
+        }
+        
+        .service-icon {
+            font-size: 48px;
+            margin-bottom: 20px;
+            display: block;
+        }
+        
+        .service-title {
+            font-size: 22px;
+            font-weight: 700;
+            margin-bottom: 15px;
+            color: #ffffff;
+        }
+        
+        .service-description {
+            font-size: 16px;
+            color: #999;
+            line-height: 1.6;
+            font-weight: 300;
+        }
+        
+        .read-more {
+            display: inline-block;
+            margin-top: 15px;
+            color: #00C896;
+            font-size: 14px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+        
+        .service-card:hover .read-more {
+            transform: translateX(-5px);
+        }
+        
+        /* Modal */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 2000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.95);
+            backdrop-filter: blur(10px);
+            animation: fadeIn 0.3s ease;
+        }
+        
+        .modal.active {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 40px 20px;
+        }
+        
+        .modal-content {
+            background: linear-gradient(135deg, rgba(10, 10, 10, 0.98) 0%, rgba(20, 20, 20, 0.98) 100%);
+            border: 1px solid rgba(0, 200, 150, 0.3);
+            border-radius: 20px;
+            max-width: 900px;
+            width: 100%;
+            max-height: 90vh;
+            overflow-y: auto;
+            padding: 50px;
+            position: relative;
+            animation: slideUp 0.4s ease;
+        }
+        
+        /* Modal Scrollbar - Hollywood Enhanced */
+        .modal-content::-webkit-scrollbar {
+            width: 8px;
+        }
+        
+        .modal-content::-webkit-scrollbar-track {
+            background: rgba(0, 0, 0, 0.3);
+            border-radius: 10px;
+            margin: 10px 0;
+        }
+        
+        .modal-content::-webkit-scrollbar-thumb {
+            background: linear-gradient(180deg, #00C896 0%, #00A8E8 100%);
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 200, 150, 0.5);
+            transition: all 0.3s ease;
+        }
+        
+        .modal-content::-webkit-scrollbar-thumb:hover {
+            background: linear-gradient(180deg, #00E8B0 0%, #00C0FF 100%);
+            box-shadow: 0 0 15px rgba(0, 200, 150, 0.8);
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        @keyframes slideUp {
+            from { transform: translateY(50px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+        
+        .modal-close {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            font-size: 32px;
+            color: #00C896;
+            cursor: pointer;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            background: rgba(0, 200, 150, 0.1);
+            transition: all 0.3s ease;
+        }
+        
+        .modal-close:hover {
+            background: rgba(0, 200, 150, 0.2);
+            transform: rotate(90deg);
+        }
+        
+        .modal-header {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid rgba(0, 200, 150, 0.2);
+        }
+        
+        .modal-icon {
+            font-size: 64px;
+        }
+        
+        .modal-title {
+            font-size: 36px;
+            font-weight: 900;
+            background: linear-gradient(135deg, #ffffff 0%, #00C896 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .modal-body {
+            color: #cccccc;
+            line-height: 1.8;
+        }
+        
+        .modal-section {
+            margin-bottom: 30px;
+        }
+        
+        .modal-section-title {
+            font-size: 24px;
+            font-weight: 700;
+            color: #00C896;
+            margin-bottom: 15px;
+        }
+        
+        .modal-section-text {
+            font-size: 17px;
+            color: #cccccc;
+            line-height: 1.8;
+            margin-bottom: 15px;
+        }
+        
+        .benefit-list {
+            list-style: none;
+            padding: 0;
+            margin: 20px 0;
+        }
+        
+        .benefit-list li {
+            font-size: 16px;
+            color: #cccccc;
+            margin-bottom: 12px;
+            padding-right: 30px;
+            position: relative;
+        }
+        
+        .benefit-list li::before {
+            content: '✓';
+            position: absolute;
+            right: 0;
+            color: #00C896;
+            font-weight: 900;
+            font-size: 18px;
+        }
+        
+        .value-box {
+            background: linear-gradient(135deg, rgba(0, 200, 150, 0.1) 0%, rgba(0, 150, 200, 0.1) 100%);
+            border: 1px solid rgba(0, 200, 150, 0.3);
+            border-radius: 15px;
+            padding: 25px;
+            margin: 20px 0;
+        }
+        
+        .value-title {
+            font-size: 20px;
+            font-weight: 700;
+            color: #00C896;
+            margin-bottom: 10px;
+        }
+        
+        .value-text {
+            font-size: 16px;
+            color: #cccccc;
+            line-height: 1.7;
+        }
+        
+        /* Experience Grid */
+        .experience-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        .experience-card {
+            background: linear-gradient(135deg, rgba(0, 200, 150, 0.05) 0%, rgba(0, 150, 200, 0.05) 100%);
+            border: 1px solid rgba(0, 200, 150, 0.2);
+            border-radius: 20px;
+            padding: 40px;
+            transition: all 0.3s ease;
+        }
+        
+        .experience-card:hover {
+            border-color: rgba(0, 200, 150, 0.5);
+            transform: translateX(-10px);
+        }
+        
+        .experience-title {
+            font-size: 24px;
+            font-weight: 700;
+            color: #00C896;
+            margin-bottom: 10px;
+        }
+        
+        .experience-company {
+            font-size: 18px;
+            color: #cccccc;
+            margin-bottom: 20px;
+            font-weight: 300;
+        }
+        
+        .experience-description {
+            font-size: 16px;
+            color: #999;
+            line-height: 1.6;
+        }
+        
+        /* Contact Section */
+        .contact-wrapper {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: start;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .contact-info-box {
+            background: linear-gradient(135deg, rgba(0, 200, 150, 0.05) 0%, rgba(0, 150, 200, 0.05) 100%);
+            border: 1px solid rgba(0, 200, 150, 0.2);
+            border-radius: 20px;
+            padding: 50px;
+        }
+        
+        .profile-image {
+            width: 180px;
+            height: 220px;
+            border-radius: 15px;
+            display: block;
+            margin: 0 auto 30px;
+            border: 3px solid rgba(0, 200, 150, 0.4);
+            box-shadow: 0 10px 40px rgba(0, 200, 150, 0.2);
+            object-fit: cover;
+            object-position: center top;
+            transition: all 0.3s ease;
+        }
+        
+        .profile-image:hover {
+            transform: scale(1.05);
+            box-shadow: 0 15px 50px rgba(0, 200, 150, 0.3);
+            border-color: rgba(0, 200, 150, 0.6);
+        }
+        
+        .profile-name {
+            font-size: 32px;
+            font-weight: 900;
+            color: #ffffff;
+            text-align: center;
+            margin-bottom: 10px;
+        }
+        
+        .profile-title {
+            font-size: 18px;
+            color: #00C896;
+            text-align: center;
+            margin-bottom: 30px;
+            font-weight: 600;
+        }
+        
+        .free-consultation {
+            background: rgba(0, 200, 150, 0.1);
+            border: 2px solid rgba(0, 200, 150, 0.3);
+            border-radius: 15px;
+            padding: 30px;
+            margin-bottom: 30px;
+        }
+        
+        .consultation-title {
+            font-size: 24px;
+            font-weight: 700;
+            color: #00C896;
+            margin-bottom: 15px;
+            text-align: center;
+        }
+        
+        .consultation-list {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .consultation-list li {
+            font-size: 16px;
+            color: #cccccc;
+            margin-bottom: 10px;
+            padding-right: 25px;
+            position: relative;
+        }
+        
+        .consultation-list li::before {
+            content: '✓';
+            position: absolute;
+            right: 0;
+            color: #00C896;
+            font-weight: 700;
+        }
+        
+        .contact-details {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            margin-top: 30px;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            font-size: 18px;
+            color: #cccccc;
+        }
+        
+        .contact-icon {
+            font-size: 24px;
+            color: #00C896;
+        }
+        
+        .contact-item a {
+            color: #00C896;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        
+        .contact-item a:hover {
+            color: #00A8E8;
+        }
+        
+        /* Contact Form */
+        .contact-form {
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.02) 0%, rgba(0, 200, 150, 0.03) 100%);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: 20px;
+            padding: 50px;
+        }
+        
+        .form-title {
+            font-size: 32px;
+            font-weight: 700;
+            color: #ffffff;
+            margin-bottom: 10px;
+        }
+        
+        .form-subtitle {
+            font-size: 16px;
+            color: #999;
+            margin-bottom: 30px;
+        }
+        
+        .form-group {
+            margin-bottom: 25px;
+        }
+        
+        .form-label {
+            display: block;
+            font-size: 14px;
+            font-weight: 600;
+            color: #cccccc;
+            margin-bottom: 8px;
+        }
+        
+        .form-input,
+        .form-textarea {
+            width: 100%;
+            padding: 15px 20px;
+            background: rgba(0, 0, 0, 0.5);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            color: #ffffff;
+            font-size: 16px;
+            font-family: 'Assistant', sans-serif;
+            transition: all 0.3s ease;
+        }
+        
+        .form-input:focus,
+        .form-textarea:focus {
+            outline: none;
+            border-color: rgba(0, 200, 150, 0.5);
+            background: rgba(0, 0, 0, 0.7);
+        }
+        
+        .form-textarea {
+            min-height: 120px;
+            resize: vertical;
+        }
+        
+        .form-submit {
+            width: 100%;
+            padding: 18px;
+            background: linear-gradient(135deg, #00C896 0%, #00A8E8 100%);
+            color: #000;
+            border: none;
+            border-radius: 50px;
+            font-size: 18px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-family: 'Assistant', sans-serif;
+        }
+        
+        .form-submit:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(0, 200, 150, 0.4);
+        }
+        
+        /* Footer */
+        footer {
+            padding: 30px;
+            text-align: center;
+            color: #666;
+            font-size: 14px;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+        }
+        
+        /* Mobile Menu */
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            color: #00C896;
+            font-size: 28px;
+            cursor: pointer;
+        }
+        
+        /* Responsive */
+        @media (max-width: 968px) {
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 70px;
+                left: 0;
+                right: 0;
+                background: rgba(0, 0, 0, 0.98);
+                flex-direction: column;
+                padding: 20px;
+                gap: 20px;
+                border-bottom: 1px solid rgba(0, 200, 150, 0.1);
+            }
+            
+            .nav-links.active {
+                display: flex;
+            }
+            
+            .mobile-menu-btn {
+                display: block;
+            }
+            
+            .hero-title {
+                font-size: 48px;
+            }
+            
+            .hero-subtitle {
+                font-size: 22px;
+            }
+            
+            .section-title {
+                font-size: 40px;
+            }
+            
+            .stats {
+                gap: 40px;
+            }
+            
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .experience-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .contact-wrapper {
+                grid-template-columns: 1fr;
+            }
+            
+            .modal-content {
+                padding: 30px 20px;
+                max-height: 85vh;
+            }
+            
+            .modal-header {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .modal-title {
+                font-size: 28px;
+            }
+            
+            .modal-section-title {
+                font-size: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Animated Background -->
+    <div class="bg-animation"></div>
+    <div class="grid-overlay"></div>
+    
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <div class="logo" onclick="showSection('home')">CIO as a Service</div>
+            <button class="mobile-menu-btn" onclick="toggleMobileMenu()">☰</button>
+            <div class="nav-links" id="navLinks">
+                <span class="nav-link active" onclick="showSection('home')" data-section="home">בית</span>
+                <span class="nav-link" onclick="showSection('services')" data-section="services">שירותים</span>
+                <span class="nav-link" onclick="showSection('experience')" data-section="experience">ניסיון</span>
+                <span class="nav-link" onclick="showSection('contact')" data-section="contact">צור קשר</span>
+                <button class="cta-nav-btn" onclick="showSection('contact')">שעת ייעוץ חינם 🎁</button>
+            </div>
+        </div>
+    </nav>
+    
+    <!-- Home Section -->
+    <section id="home" class="section active">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-badge">מנהל מערכות מידע חיצוני</div>
+                <h1 class="hero-title">
+                    מנמ"ר מקצועי<br>
+                    בשירות החברה שלכם
+                </h1>
+                <p class="hero-subtitle">
+                    שירותי CIO חיצוני לחברות קטנות ובינוניות<br>
+                    שלא יכולות להרשות לעצמן מנהל IT במשרה מלאה
+                </p>
+                <p class="hero-description">
+                    <span class="highlight">12 שנות ניסיון</span> בניהול תשתיות IT מורכבות בארגונים מובילים<br>
+                    עכשיו זמין לכם במחיר גמיש
+                </p>
+                
+                <div class="stats">
+                    <div class="stat">
+                        <div class="stat-number">12+</div>
+                        <div class="stat-label">שנות ניסיון</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-number">4</div>
+                        <div class="stat-label">תפקידי מנמ"ר</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-number">100%</div>
+                        <div class="stat-label">מחויבות להצלחה</div>
+                    </div>
+                </div>
+                
+                <button class="cta-nav-btn" onclick="showSection('contact')" style="margin-top: 20px; padding: 20px 50px; font-size: 20px;">
+                    קבעו פגישת ייעוץ חינם
+                </button>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Services Section -->
+    <section id="services" class="section hidden">
+        <div class="container">
+            <h2 class="section-title">השירותים</h2>
+            <p class="section-subtitle">כל מה שחברה צריכה בתחום ה-IT - אני מכסה</p>
+            
+            <div class="services-grid">
+                <div class="service-card" onclick="openModal('cloud')">
+                    <span class="service-icon">☁️</span>
+                    <h3 class="service-title">מעבר לענן</h3>
+                    <p class="service-description">
+                        מעבר חלק ל-AWS, Azure, Google Cloud. תכנון אסטרטגי, הגירה מבוקרת ותמיכה מלאה לאחר המעבר.
+                    </p>
+                    <span class="read-more">קרא עוד ←</span>
+                </div>
+                
+                <div class="service-card" onclick="openModal('security')">
+                    <span class="service-icon">🔒</span>
+                    <h3 class="service-title">אבטחת מידע</h3>
+                    <p class="service-description">
+                        הגנה מקיפה מפני סייבר, ניהול סיכונים, גיבויים אוטומטיים, התאוששות מאסונות, הגנה מפני פישינג וכופרות.
+                    </p>
+                    <span class="read-more">קרא עוד ←</span>
+                </div>
+                
+                <div class="service-card" onclick="openModal('microsoft')">
+                    <span class="service-icon">💼</span>
+                    <h3 class="service-title">Microsoft 365</h3>
+                    <p class="service-description">
+                        התקנה מקצועית, הגדרות מתקדמות, אופטימיזציה, ניהול רישוי חכם ותמיכה טכנית מלאה.
+                    </p>
+                    <span class="read-more">קרא עוד ←</span>
+                </div>
+                
+                <div class="service-card" onclick="openModal('infrastructure')">
+                    <span class="service-icon">🏗️</span>
+                    <h3 class="service-title">שיפור תשתיות</h3>
+                    <p class="service-description">
+                        שדרוג רשתות תקשורת, תשתית טלפונית (VoIP), שרתים, תחנות עבודה וכל תשתית מחשוב ארגונית.
+                    </p>
+                    <span class="read-more">קרא עוד ←</span>
+                </div>
+                
+                <div class="service-card" onclick="openModal('ai')">
+                    <span class="service-icon">🤖</span>
+                    <h3 class="service-title">כלי AI מתקדמים</h3>
+                    <p class="service-description">
+                        שילוב חכם של בינה מלאכותית בארגון - ChatGPT, Microsoft Copilot, אוטומציות ותהליכים חכמים.
+                    </p>
+                    <span class="read-more">קרא עוד ←</span>
+                </div>
+                
+                <div class="service-card" onclick="openModal('training')">
+                    <span class="service-icon">🎓</span>
+                    <h3 class="service-title">הדרכות לעובדים</h3>
+                    <p class="service-description">
+                        הדרכות מקצועיות באבטחת מידע, זיהוי איומים, פישינג, שימוש בכלים חדשים ושמירה על ארגון מאובטח.
+                    </p>
+                    <span class="read-more">קרא עוד ←</span>
+                </div>
+                
+                <div class="service-card" onclick="openModal('cyber')">
+                    <span class="service-icon">🚨</span>
+                    <h3 class="service-title">ניהול אירועי סייבר</h3>
+                    <p class="service-description">
+                        תגובה מהירה לאירועי אבטחה, חקירות דיגיטליות, שחזור מערכות והפקת לקחים למניעת תקלות עתידיות.
+                    </p>
+                    <span class="read-more">קרא עוד ←</span>
+                </div>
+                
+                <div class="service-card" onclick="openModal('projects')">
+                    <span class="service-icon">📊</span>
+                    <h3 class="service-title">ניהול פרויקטים</h3>
+                    <p class="service-description">
+                        ניהול מקצועי של פרויקטי IT מורכבים מתחילה ועד סוף - בזמן, בתקציב ובאיכות גבוהה.
+                    </p>
+                    <span class="read-more">קרא עוד ←</span>
+                </div>
+                
+                <div class="service-card" onclick="openModal('licensing')">
+                    <span class="service-icon">📜</span>
+                    <h3 class="service-title">רישוי ותאימות</h3>
+                    <p class="service-description">
+                        ניהול רישיונות תוכנה, תאימות לרגולציה, עמידה בתקני GDPR ודרישות ביטוח סייבר.
+                    </p>
+                    <span class="read-more">קרא עוד ←</span>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Experience Section -->
+    <section id="experience" class="section hidden">
+        <div class="container">
+            <h2 class="section-title">הניסיון</h2>
+            <p class="section-subtitle">12 שנות ניסיון בארגונים מובילים - מסטארטאפים ועד חברות בינלאומיות</p>
+            
+            <div class="experience-grid">
+                <div class="experience-card">
+                    <h3 class="experience-title">מנהל מערכות מידע</h3>
+                    <p class="experience-company">פתחון לב | 2023 - כיום</p>
+                    <p class="experience-description">
+                        ניהול מלא של תשתיות IT לארגון עם 30 עובדים. מעבר מוצלח לענן, יישום מערכות אבטחת מידע מתקדמות, 
+                        ניהול מערכות קריטיות ושדרוג תשתיות מחשוב ותקשורת.
+                    </p>
+                </div>
+                
+                <div class="experience-card">
+                    <h3 class="experience-title">CIO / מנהל IT</h3>
+                    <p class="experience-company">Lycored | 2020 - 2023</p>
+                    <p class="experience-description">
+                        ניהול תשתיות IT בארגון גלובלי בתחום הביוטכנולוגיה. ניהול תשתיות בינלאומיות, 
+                        אבטחת מידע ברמה גבוהה, מערכות ERP וניהול צוות IT רב-לאומי.
+                    </p>
+                </div>
+                
+                <div class="experience-card">
+                    <h3 class="experience-title">מנהל מערכות מידע</h3>
+                    <p class="experience-company">Menarev Real Estate | 2016 - 2020</p>
+                    <p class="experience-description">
+                        קבוצת נדל"ן מובילה - ניהול פרויקטי IT רחבי היקף, מערכות Priority ERP, 
+                        תשתיות מחשוב ותקשורת מתקדמות, אבטחת מידע וניהול גיבויים קריטיים.
+                    </p>
+                </div>
+                
+                <div class="experience-card">
+                    <h3 class="experience-title">מנהל IT</h3>
+                    <p class="experience-company">Gottex Swimwear | 2012 - 2016</p>
+                    <p class="experience-description">
+                        חברה בינלאומית - ניהול תשתיות IT במדינות מרובות, מעבר מוצלח לענן, 
+                        אוטומציות תהליכים, שדרוג מערכות ותמיכה טכנית רב-לאומית.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Contact Section -->
+    <section id="contact" class="section hidden">
+        <div class="container">
+            <h2 class="section-title">צור קשר</h2>
+            <p class="section-subtitle">בואו נדבר על הצרכים שלכם - שעת ייעוץ ראשונה חינם!</p>
+            
+            <div class="contact-wrapper">
+                <!-- Contact Info -->
+                <div class="contact-info-box">
+                    <img src="nir-ram-photo.png" alt="ניר רם" class="profile-image" />
+                    <h3 class="profile-name">ניר רם</h3>
+                    <p class="profile-title">CIO / מנהל מערכות מידע</p>
+                    
+                    <div class="free-consultation">
+                        <h4 class="consultation-title">🎁 שעת ייעוץ חינם כוללת:</h4>
+                        <ul class="consultation-list">
+                            <li>מיפוי מלא של המצב הקיים בארגון</li>
+                            <li>זיהוי סיכונים ונקודות תורפה</li>
+                            <li>המלצות מקצועיות לשיפור</li>
+                            <li>סקירת תשתיות מחשוב ותקשורת</li>
+                            <li>הערכת מצב אבטחת המידע</li>
+                            <li>תכנית פעולה לטווח קצר וארוך</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="contact-details">
+                        <div class="contact-item">
+                            <span class="contact-icon">📧</span>
+                            <a href="mailto:nir.ram77@gmail.com">nir.ram77@gmail.com</a>
+                        </div>
+                        <div class="contact-item">
+                            <span class="contact-icon">📱</span>
+                            <a href="tel:+972522653170">052-265-3170</a>
+                        </div>
+                        <div class="contact-item">
+                            <span class="contact-icon">📍</span>
+                            <span>ישראל - זמין לפגישות בכל הארץ</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Contact Form -->
+                <div class="contact-form">
+                    <h3 class="form-title">שלחו הודעה</h3>
+                    <p class="form-subtitle">מלאו את הפרטים ואחזור אליכם תוך 24 שעות</p>
+                    
+                    <form onsubmit="handleSubmit(event)">
+                        <div class="form-group">
+                            <label class="form-label">שם מלא *</label>
+                            <input type="text" class="form-input" required placeholder="הכניסו את שמכם">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label class="form-label">אימייל *</label>
+                            <input type="email" class="form-input" required placeholder="email@example.com">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label class="form-label">טלפון</label>
+                            <input type="tel" class="form-input" placeholder="050-123-4567">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label class="form-label">שם החברה</label>
+                            <input type="text" class="form-input" placeholder="שם החברה שלכם">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label class="form-label">הודעה *</label>
+                            <textarea class="form-textarea" required placeholder="ספרו לי קצת על הצרכים שלכם..."></textarea>
+                        </div>
+                        
+                        <button type="submit" class="form-submit">שלח הודעה</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Modals for Services -->
+    
+    <!-- Cloud Modal -->
+    <div id="cloud-modal" class="modal">
+        <div class="modal-content">
+            <span class="modal-close" onclick="closeModal('cloud')">×</span>
+            <div class="modal-header">
+                <span class="modal-icon">☁️</span>
+                <h2 class="modal-title">מעבר לענן</h2>
+            </div>
+            <div class="modal-body">
+                <div class="modal-section">
+                    <h3 class="modal-section-title">למה לעבור לענן?</h3>
+                    <p class="modal-section-text">
+                        שרתים פיזיים זה עבר. הענן זה ההווה והעתיד. במקום לקנות שרתים יקרים, לשלם על חשמל ומיזוג, 
+                        ולהחזיק חדר שרתים - אתם משלמים רק על מה שאתם באמת משתמשים בו. 
+                        וכשהעסק גדל, התשתית גדלה איתכם בלחיצת כפתור.
+                    </p>
+                </div>
+                
+                <div class="modal-section">
+                    <h3 class="modal-section-title">איך אני עוזר לכם?</h3>
+                    <ul class="benefit-list">
+                        <li>בוחן את המצב הקיים - מה יש לכם עכשיו ולאן אתם צריכים להגיע</li>
+                        <li>בונה תכנית מעבר חכמה - בשלבים, בלי לעצור את העסק</li>
+                        <li>בוחר את הפלטפורמה הנכונה - AWS, Azure או Google Cloud</li>
+                        <li>מבצע את המעבר בצורה מבוקרת - בלילות או בסופי שבוע</li>
+                        <li>מוודא שהכל עובד - בדיקות מקיפות לפני שמעבירים הכל</li>
+                        <li>נשאר איתכם גם אחרי - תמיכה, אופטימיזציה וחיסכון בעלויות</li>
+                    </ul>
+                </div>
+                
+                <div class="value-box">
+                    <h4 class="value-title">הערך המוסף שלי</h4>
+                    <p class="value-text">
+                        אני לא סתם "מעביר שרתים". אני מבין את הצרכים העסקיים שלכם, בונה פתרון שחוסך לכם כסף, 
+                        ומוודא שאתם מוכנים לגדול. עשיתי את זה בארגונים בינלאומיים - עכשיו אני מביא את הידע הזה אליכם.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Security Modal -->
+    <div id="security-modal" class="modal">
+        <div class="modal-content">
+            <span class="modal-close" onclick="closeModal('security')">×</span>
+            <div class="modal-header">
+                <span class="modal-icon">🔒</span>
+                <h2 class="modal-title">אבטחת מידע</h2>
+            </div>
+            <div class="modal-body">
+                <div class="modal-section">
+                    <h3 class="modal-section-title">למה זה קריטי?</h3>
+                    <p class="modal-section-text">
+                        התקפת סייבר אחת יכולה להרוס עסק. כופרות, פישינג, גניבת מידע - זה לא "אם זה יקרה", אלא "מתי". 
+                        החדשות מלאות בחברות שנסגרו אחרי תקיפה. וזה לא קורה רק לגדולים - חברות קטנות הן יעד קל יותר.
+                    </p>
+                </div>
+                
+                <div class="modal-section">
+                    <h3 class="modal-section-title">מה אני עושה?</h3>
+                    <ul class="benefit-list">
+                        <li>סורק את כל המערכת - מוצא חולשות לפני שההאקרים מוצאים</li>
+                        <li>בונה קיר הגנה רב-שכבתי - Firewall, אנטי-וירוס, הגנה בזמן אמת</li>
+                        <li>מגדיר גיבויים אוטומטיים - כל יום, לשלושה מקומות שונים</li>
+                        <li>מדריך את העובדים - איך לזהות פישינג ולא ליפול למלכודות</li>
+                        <li>מכין תוכנית התאוששות - מה עושים אם בכל זאת יש תקיפה</li>
+                        <li>עובד עם חברות ביטוח - מוודא שאתם עומדים בדרישות</li>
+                    </ul>
+                </div>
+                
+                <div class="value-box">
+                    <h4 class="value-title">הערך המוסף שלי</h4>
+                    <p class="value-text">
+                        ניהלתי תקלות סייבר אמיתיות. ראיתי את ההשלכות. אני יודע איך לבנות הגנה שעובדת, 
+                        בלי להכביד על העובדים ובלי לפגוע בפרודוקטיביות. ביטחון זה לא רק טכנולוגיה - זה תהליך.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Microsoft Modal -->
+    <div id="microsoft-modal" class="modal">
+        <div class="modal-content">
+            <span class="modal-close" onclick="closeModal('microsoft')">×</span>
+            <div class="modal-header">
+                <span class="modal-icon">💼</span>
+                <h2 class="modal-title">Microsoft 365</h2>
+            </div>
+            <div class="modal-body">
+                <div class="modal-section">
+                    <h3 class="modal-section-title">למה M365?</h3>
+                    <p class="modal-section-text">
+                        Word, Excel, Teams, OneDrive - כולם יודעים מה זה. אבל רוב החברות משתמשות רק ב-20% מהיכולות. 
+                        אתם משלמים על חבילה מלאה ומנצלים רבע ממנה. יש שם כלים מדהימים שיכולים לחסוך לכם שעות עבודה.
+                    </p>
+                </div>
+                
+                <div class="modal-section">
+                    <h3 class="modal-section-title">איך אני מרוויח לכם?</h3>
+                    <ul class="benefit-list">
+                        <li>בודק אילו רישיונות באמת צריכים - לפעמים אפשר לחסוך 30-40%</li>
+                        <li>מגדיר את המערכת נכון - אבטחה, גיבויים, שיתוף קבצים חכם</li>
+                        <li>מדריך את הצוות - איך להפיק את המקסימום מהכלים</li>
+                        <li>משלב אוטומציות - Power Automate, Planner, משימות חוזרות</li>
+                        <li>מקים סביבת עבודה היברידית - משרד + בית בצורה חלקה</li>
+                        <li>תמיכה שוטפת - כשמישהו תקוע, אני פותר</li>
+                    </ul>
+                </div>
+                
+                <div class="value-box">
+                    <h4 class="value-title">הערך המוסף שלי</h4>
+                    <p class="value-text">
+                        עבדתי עם M365 בארגונים עם מאות משתמשים. אני יודע את כל הטריקים, הקיצורים, והחסכונות. 
+                        אני הופך את M365 ממערכת מייל לכלי עבודה אמיתי שמרוויח לכם זמן וכסף.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Infrastructure Modal -->
+    <div id="infrastructure-modal" class="modal">
+        <div class="modal-content">
+            <span class="modal-close" onclick="closeModal('infrastructure')">×</span>
+            <div class="modal-header">
+                <span class="modal-icon">🏗️</span>
+                <h2 class="modal-title">שיפור תשתיות</h2>
+            </div>
+            <div class="modal-body">
+                <div class="modal-section">
+                    <h3 class="modal-section-title">מה זה אומר בפשטות?</h3>
+                    <p class="modal-section-text">
+                        התשתית זה כל מה שגורם למחשבים שלכם לעבוד - האינטרנט, הרשת הפנימית, המדפסות, הטלפונים. 
+                        כשהתשתית לא טובה, הכל איטי, מתקלקל, ומשגע את כולם. כשהיא טובה - אף אחד לא שם לב, וזה בדיוק מה שצריך.
+                    </p>
+                </div>
+                
+                <div class="modal-section">
+                    <h3 class="modal-section-title">מה אני משפר?</h3>
+                    <ul class="benefit-list">
+                        <li>רשת מהירה ויציבה - Wi-Fi שעובד בכל פינה, כבלים מסודרים</li>
+                        <li>שרתים שלא קורסים - מעבר לענן או שדרוג שרתים פיזיים</li>
+                        <li>מחשבים שעובדים - החלפה חכמה של תחנות ישנות</li>
+                        <li>טלפוניה מתקדמת - VoIP חוסך כסף ומוסיף יכולות</li>
+                        <li>מערכות גיבוי - אף פעם לא תאבדו קובץ</li>
+                        <li>מעקב וניטור - אני יודע על בעיה לפני שאתם</li>
+                    </ul>
+                </div>
+                
+                <div class="value-box">
+                    <h4 class="value-title">הערך המוסף שלי</h4>
+                    <p class="value-text">
+                        בניתי תשתיות לארגונים בינלאומיים עם מאות עובדים. אני יודע מה עובד לטווח ארוך, 
+                        מה חוסך כסף, ומה גדל איתכם. אני לא רק מתקן - אני בונה בסיס איתן לעתיד.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- AI Modal -->
+    <div id="ai-modal" class="modal">
+        <div class="modal-content">
+            <span class="modal-close" onclick="closeModal('ai')">×</span>
+            <div class="modal-header">
+                <span class="modal-icon">🤖</span>
+                <h2 class="modal-title">כלי AI מתקדמים</h2>
+            </div>
+            <div class="modal-body">
+                <div class="modal-section">
+                    <h3 class="modal-section-title">למה AI עכשיו?</h3>
+                    <p class="modal-section-text">
+                        AI זה לא עוד באזז. זה כלי עבודה אמיתי שיכול לחסוך לכם שעות כל יום. 
+                        כתיבת מיילים, סיכום פגישות, ניתוח נתונים, תשובות אוטומטיות - החברות שמשלבות AI עכשיו 
+                        מקבלות יתרון עצום על המתחרים.
+                    </p>
+                </div>
+                
+                <div class="modal-section">
+                    <h3 class="modal-section-title">מה אני עושה?</h3>
+                    <ul class="benefit-list">
+                        <li>מזהה איפה AI יכול לעזור - לא כל דבר, רק מה שמתאים</li>
+                        <li>משלב ChatGPT בצורה חכמה - למכירות, שירות, תוכן</li>
+                        <li>מטמיע Microsoft Copilot - AI בתוך Office שחוסך שעות</li>
+                        <li>בונה אוטומציות - משימות חוזרות שנעשות לבד</li>
+                        <li>מדריך את הצוות - איך להשתמש נכון, מה האיסורים</li>
+                        <li>מגן על המידע - AI לא יברח עם הסודות שלכם</li>
+                    </ul>
+                </div>
+                
+                <div class="value-box">
+                    <h4 class="value-title">הערך המוסף שלי</h4>
+                    <p class="value-text">
+                        אני לא סתם מתלהב מטכנולוגיה חדשה. אני מביא AI בצורה מעשית - רק מה שעובד, 
+                        רק מה שמרוויח זמן וכסף. אני גם מוודא שאתם לא חושפים מידע רגיש בדרך.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Training Modal -->
+    <div id="training-modal" class="modal">
+        <div class="modal-content">
+            <span class="modal-close" onclick="closeModal('training')">×</span>
+            <div class="modal-header">
+                <span class="modal-icon">🎓</span>
+                <h2 class="modal-title">הדרכות לעובדים</h2>
+            </div>
+            <div class="modal-body">
+                <div class="modal-section">
+                    <h3 class="modal-section-title">למה זה חשוב?</h3>
+                    <p class="modal-section-text">
+                        העובד הכי מסוכן בחברה זה לא ההאקר - זה העובד שלכם שלחץ על קישור מפישינג. 
+                        90% מהפריצות מתחילות מטעות אנושית. אפשר להשקיע מיליונים באבטחה, אבל אם העובדים לא מודעים - זה כמו דלת פתוחה.
+                    </p>
+                </div>
+                
+                <div class="modal-section">
+                    <h3 class="modal-section-title">מה מלמדים?</h3>
+                    <ul class="benefit-list">
+                        <li>זיהוי פישינג - איך להבחין במייל מזויף ולא ליפול לזה</li>
+                        <li>סיסמאות חזקות - למה "123456" זה רעיון גרוע</li>
+                        <li>עבודה מהבית בבטחה - Wi-Fi ציבורי זה מסוכן</li>
+                        <li>שימוש בכלים חדשים - Teams, SharePoint, OneDrive נכון</li>
+                        <li>מה עושים בחשד - למי לפנות, איך לדווח מהר</li>
+                        <li>תרגול אמיתי - סימולציות של פישינג כדי לתרגל</li>
+                    </ul>
+                </div>
+                
+                <div class="value-box">
+                    <h4 class="value-title">הערך המוסף שלי</h4>
+                    <p class="value-text">
+                        ההדרכות שלי לא משעממות. אני מדבר בשפה פשוטה, עם דוגמאות אמיתיות, 
+                        ובלי להפחיד. העובדים יוצאים מודעים ומצוידים - לא מפוחדים.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Cyber Modal -->
+    <div id="cyber-modal" class="modal">
+        <div class="modal-content">
+            <span class="modal-close" onclick="closeModal('cyber')">×</span>
+            <div class="modal-header">
+                <span class="modal-icon">🚨</span>
+                <h2 class="modal-title">ניהול אירועי סייבר</h2>
+            </div>
+            <div class="modal-body">
+                <div class="modal-section">
+                    <h3 class="modal-section-title">מה קורה באירוע?</h3>
+                    <p class="modal-section-text">
+                        בוקר יום רגיל. פתאום אף אחד לא יכול להיכנס למערכות. על המסך: "כל הקבצים שלכם מוצפנים. 
+                        שלחו ביטקוין אם אתם רוצים אותם בחזרה." פאניקה מלאה. זה לא סרט - זה קורה כל יום לחברות בישראל.
+                    </p>
+                </div>
+                
+                <div class="modal-section">
+                    <h3 class="modal-section-title">מה אני עושה?</h3>
+                    <ul class="benefit-list">
+                        <li>מגיב מיידית - עוצר את ההתפשטות לפני שזה הורס הכל</li>
+                        <li>מבודד את הנגוע - מנתק מהרשת, מציל מה שאפשר</li>
+                        <li>חוקר מה קרה - איך נכנסו, מה נגעו, מי אשם</li>
+                        <li>משחזר מגיבויים - מחזיר את המערכות לחיים</li>
+                        <li>סוגר את החור - מוודא שזה לא יקרה שוב</li>
+                        <li>מכין דו"ח - לביטוח, לרשויות, לנהלים</li>
+                    </ul>
+                </div>
+                
+                <div class="value-box">
+                    <h4 class="value-title">הערך המוסף שלי</h4>
+                    <p class="value-text">
+                        ניהלתי אירועי סייבר אמיתיים. ראיתי פאניקה, הצלחתי לשחזר חברות שלמות. 
+                        אני יודע לשמור על קור רוח, לעבוד בשיטה, ולהחזיר אתכם לעבודה מהר.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Projects Modal -->
+    <div id="projects-modal" class="modal">
+        <div class="modal-content">
+            <span class="modal-close" onclick="closeModal('projects')">×</span>
+            <div class="modal-header">
+                <span class="modal-icon">📊</span>
+                <h2 class="modal-title">ניהול פרויקטים</h2>
+            </div>
+            <div class="modal-body">
+                <div class="modal-section">
+                    <h3 class="modal-section-title">למה פרויקטי IT נכשלים?</h3>
+                    <p class="modal-section-text">
+                        פרויקט IT זה לא "לקנות מחשבים חדשים". זה תכנון, תיאום ספקים, אינטגרציות, הדרכות, 
+                        מעבר נתונים, בדיקות, ותמיכה. רוב הפרויקטים עוברים תקציב או לא מסתיימים בכלל. 
+                        למה? כי אין למי לנהל אותם נכון.
+                    </p>
+                </div>
+                
+                <div class="modal-section">
+                    <h3 class="modal-section-title">איך אני מנהל?</h3>
+                    <ul class="benefit-list">
+                        <li>מגדיר מטרות ברורות - מה אנחנו באמת רוצים להשיג</li>
+                        <li>בונה תכנית עבודה - שלבים, אבני דרך, תאריכים</li>
+                        <li>מנהל ספקים - מוודא שהם עומדים בלוחות זמנים</li>
+                        <li>שומר על תקציב - אין הפתעות, כל שינוי מאושר</li>
+                        <li>מתקשר כל הזמן - כולם יודעים מה קורה תמיד</li>
+                        <li>סוגר בהצלחה - מסירה, הדרכה, ותמיכה</li>
+                    </ul>
+                </div>
+                
+                <div class="value-box">
+                    <h4 class="value-title">הערך המוסף שלי</h4>
+                    <p class="value-text">
+                        ניהלתי פרויקטים של מיליוני שקלים בארגונים בינלאומיים. אני יודע איפה הבעיות, 
+                        איך למנוע אותן, ואיך להביא פרויקט לסיום בזמן ובתקציב. זה לא קסם - זה ניסיון.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Licensing Modal -->
+    <div id="licensing-modal" class="modal">
+        <div class="modal-content">
+            <span class="modal-close" onclick="closeModal('licensing')">×</span>
+            <div class="modal-header">
+                <span class="modal-icon">📜</span>
+                <h2 class="modal-title">רישוי ותאימות</h2>
+            </div>
+            <div class="modal-body">
+                <div class="modal-section">
+                    <h3 class="modal-section-title">למה זה חשוב?</h3>
+                    <p class="modal-section-text">
+                        רישיונות תוכנה זה לא סתם ניירת. משתמשים בתוכנה בלי רישיון? זה פלילי. 
+                        לא עומדים בתקני GDPR? קנסות של מאות אלפים. חברות ביטוח דורשות הוכחות אבטחה? 
+                        בלי זה אין ביטוח. זה לא משעמם - זה קריטי.
+                    </p>
+                </div>
+                
+                <div class="modal-section">
+                    <h3 class="modal-section-title">מה אני עושה?</h3>
+                    <ul class="benefit-list">
+                        <li>מסדר רישיונות - מוודא שאתם חוקיים 100%</li>
+                        <li>חוסך כסף - מוצא רישיונות מיותרים ומבטל אותם</li>
+                        <li>מכין לתאימות - GDPR, ISO, דרישות ביטוח</li>
+                        <li>מנהל חידושים - תזכורות, מעקב, ניהול מרכזי</li>
+                        <li>עובד עם ביטוח - מוודא שעומדים בדרישות</li>
+                        <li>מכין לביקורות - תיעוד מסודר, הכל מוכן</li>
+                    </ul>
+                </div>
+                
+                <div class="value-box">
+                    <h4 class="value-title">הערך המוסף שלי</h4>
+                    <p class="value-text">
+                        אני יודע איך לנווט בג'ונגל של רישיונות מיקרוסופט, אדובי, וכל השאר. 
+                        אני גם יודע מה חברות ביטוח באמת דורשות - לא סתם מילוי טפסים, אלא תאימות אמיתית.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Footer -->
+    <footer>
+        <p>© 2025 ניר רם | CIO as a Service | מנהל מערכות מידע חיצוני</p>
+    </footer>
+    
+    <script>
+        // Section navigation
+        function showSection(sectionId) {
+            // Hide all sections
+            document.querySelectorAll('.section').forEach(section => {
+                section.classList.remove('active');
+                section.classList.add('hidden');
+            });
+            
+            // Show selected section
+            const targetSection = document.getElementById(sectionId);
+            targetSection.classList.remove('hidden');
+            setTimeout(() => {
+                targetSection.classList.add('active');
+            }, 50);
+            
+            // Update active nav link
+            document.querySelectorAll('.nav-link').forEach(link => {
+                link.classList.remove('active');
+            });
+            const activeLink = document.querySelector(`[data-section="${sectionId}"]`);
+            if (activeLink) {
+                activeLink.classList.add('active');
+            }
+            
+            // Close mobile menu
+            document.getElementById('navLinks').classList.remove('active');
+            
+            // Scroll to top
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+        
+        // Mobile menu toggle
+        function toggleMobileMenu() {
+            document.getElementById('navLinks').classList.toggle('active');
+        }
+        
+        // Form submission
+        function handleSubmit(event) {
+            event.preventDefault();
+            alert('תודה על הפנייה! אחזור אליכם בהקדם.');
+            event.target.reset();
+        }
+        
+        // Modal functions
+        function openModal(modalId) {
+            const modal = document.getElementById(modalId + '-modal');
+            if (modal) {
+                modal.classList.add('active');
+                document.body.style.overflow = 'hidden';
+            }
+        }
+        
+        function closeModal(modalId) {
+            const modal = document.getElementById(modalId + '-modal');
+            if (modal) {
+                modal.classList.remove('active');
+                document.body.style.overflow = 'auto';
+            }
+        }
+        
+        // Close modal when clicking outside
+        window.onclick = function(event) {
+            if (event.target.classList.contains('modal')) {
+                event.target.classList.remove('active');
+                document.body.style.overflow = 'auto';
+            }
+        }
+        
+        // Close modal on Escape key
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape') {
+                document.querySelectorAll('.modal.active').forEach(modal => {
+                    modal.classList.remove('active');
+                    document.body.style.overflow = 'auto';
+                });
+            }
+        });
+        
+        // Close mobile menu when clicking outside
+        document.addEventListener('click', function(event) {
+            const nav = document.querySelector('nav');
+            const menuBtn = document.querySelector('.mobile-menu-btn');
+            const navLinks = doc
