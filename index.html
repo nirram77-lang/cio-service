@@ -410,7 +410,7 @@
             animation: slideUp 0.4s ease;
         }
         
-        /* Modal Scrollbar - Hollywood Enhanced */
+        /* Modal Scrollbar */
         .modal-content::-webkit-scrollbar {
             width: 8px;
         }
@@ -425,12 +425,6 @@
             background: linear-gradient(180deg, #00C896 0%, #00A8E8 100%);
             border-radius: 10px;
             box-shadow: 0 0 10px rgba(0, 200, 150, 0.5);
-            transition: all 0.3s ease;
-        }
-        
-        .modal-content::-webkit-scrollbar-thumb:hover {
-            background: linear-gradient(180deg, #00E8B0 0%, #00C0FF 100%);
-            box-shadow: 0 0 15px rgba(0, 200, 150, 0.8);
         }
         
         @keyframes fadeIn {
@@ -552,6 +546,98 @@
             font-size: 16px;
             color: #cccccc;
             line-height: 1.7;
+        }
+        
+        /* Case Study Highlight */
+        .case-study-highlight {
+            display: block;
+            background: linear-gradient(135deg, rgba(0, 200, 150, 0.15) 0%, rgba(0, 168, 232, 0.1) 100%);
+            border: 2px solid rgba(0, 200, 150, 0.5);
+            border-radius: 20px;
+            padding: 40px;
+            margin-bottom: 50px;
+            text-decoration: none;
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .case-study-highlight:hover {
+            transform: translateY(-5px);
+            border-color: #00C896;
+            box-shadow: 0 20px 60px rgba(0, 200, 150, 0.3);
+        }
+        
+        .case-study-content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 30px;
+        }
+        
+        .case-study-text {
+            flex: 1;
+            min-width: 300px;
+        }
+        
+        .case-study-badge {
+            display: inline-block;
+            padding: 8px 20px;
+            background: rgba(0, 200, 150, 0.2);
+            border: 1px solid rgba(0, 200, 150, 0.4);
+            border-radius: 50px;
+            font-size: 14px;
+            font-weight: 700;
+            color: #00C896;
+            margin-bottom: 15px;
+        }
+        
+        .case-study-title {
+            font-size: 32px;
+            font-weight: 900;
+            color: #ffffff;
+            margin-bottom: 10px;
+        }
+        
+        .case-study-desc {
+            font-size: 18px;
+            color: #cccccc;
+            margin-bottom: 20px;
+            line-height: 1.6;
+        }
+        
+        .case-study-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: #00C896;
+            font-size: 16px;
+            font-weight: 700;
+        }
+        
+        .case-study-stats {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+        
+        .case-study-stat {
+            text-align: center;
+            padding: 20px 25px;
+            background: rgba(0,0,0,0.3);
+            border-radius: 15px;
+        }
+        
+        .case-study-stat-value {
+            font-size: 36px;
+            font-weight: 900;
+            color: #00C896;
+        }
+        
+        .case-study-stat-label {
+            font-size: 12px;
+            color: #999;
         }
         
         /* Experience Grid */
@@ -875,8 +961,16 @@
                 font-size: 28px;
             }
             
-            .modal-section-title {
-                font-size: 20px;
+            .case-study-title {
+                font-size: 24px;
+            }
+            
+            .case-study-content {
+                flex-direction: column;
+            }
+            
+            .case-study-stats {
+                justify-content: center;
             }
         }
     </style>
@@ -907,21 +1001,21 @@
             <div class="hero-content">
                 <div class="hero-badge">מנהל מערכות מידע חיצוני</div>
                 <h1 class="hero-title">
-                    מנמ"ר מקצועי<br>
-                    בשירות החברה שלכם
+                    החברה שלכם קטנה?<br>
+                    הבעיות הטכנולוגיות שלה לא.
                 </h1>
                 <p class="hero-subtitle">
                     שירותי CIO חיצוני לחברות קטנות ובינוניות<br>
                     שלא יכולות להרשות לעצמן מנהל IT במשרה מלאה
                 </p>
                 <p class="hero-description">
-                    <span class="highlight">12 שנות ניסיון</span> בניהול תשתיות IT מורכבות בארגונים מובילים<br>
+                    <span class="highlight">12+ שנות ניסיון</span> בניהול תשתיות IT מורכבות בארגונים מובילים<br>
                     עכשיו זמין לכם במחיר גמיש
                 </p>
                 
                 <div class="stats">
                     <div class="stat">
-                        <div class="stat-number">12+</div>
+                        <div class="stat-number">+12</div>
                         <div class="stat-label">שנות ניסיון</div>
                     </div>
                     <div class="stat">
@@ -1038,13 +1132,39 @@
             <h2 class="section-title">הניסיון</h2>
             <p class="section-subtitle">12 שנות ניסיון בארגונים מובילים - מסטארטאפים ועד חברות בינלאומיות</p>
             
+            <!-- Case Study Highlight -->
+            <a href="case-study-pitchon-lev.html" class="case-study-highlight">
+                <div class="case-study-content">
+                    <div class="case-study-text">
+                        <div class="case-study-badge">🔥 Case Study חדש</div>
+                        <h3 class="case-study-title">פתחון לב: התאוששות מסייבר ב-75 ימים</h3>
+                        <p class="case-study-desc">הובלת ארגון פילנתרופי עם 200 עובדים ב-14 סניפים להתאוששות מלאה, מעבר לענן וחיזוק מערך האבטחה</p>
+                        <span class="case-study-link">קרא את הסיפור המלא ←</span>
+                    </div>
+                    <div class="case-study-stats">
+                        <div class="case-study-stat">
+                            <div class="case-study-stat-value">75</div>
+                            <div class="case-study-stat-label">ימים</div>
+                        </div>
+                        <div class="case-study-stat">
+                            <div class="case-study-stat-value">14</div>
+                            <div class="case-study-stat-label">סניפים</div>
+                        </div>
+                        <div class="case-study-stat">
+                            <div class="case-study-stat-value">0</div>
+                            <div class="case-study-stat-label">אירועים מאז</div>
+                        </div>
+                    </div>
+                </div>
+            </a>
+            
             <div class="experience-grid">
                 <div class="experience-card">
                     <h3 class="experience-title">מנהל מערכות מידע</h3>
-                    <p class="experience-company">פתחון לב | 2023 - כיום</p>
+                    <p class="experience-company">פתחון לב | 2023 - 2025</p>
                     <p class="experience-description">
-                        ניהול מלא של תשתיות IT לארגון עם 30 עובדים. מעבר מוצלח לענן, יישום מערכות אבטחת מידע מתקדמות, 
-                        ניהול מערכות קריטיות ושדרוג תשתיות מחשוב ותקשורת.
+                        ניהול מלא של תשתיות IT לארגון פילנתרופי עם 200 עובדים ב-14 סניפים. התאוששות מאירוע סייבר מורכב, 
+                        מעבר מוצלח לענן, יישום מערכות אבטחת מידע מתקדמות ושדרוג תשתיות מחשוב ותקשורת.
                     </p>
                 </div>
                 
@@ -1157,8 +1277,6 @@
         </div>
     </section>
     
-    <!-- Modals for Services -->
-    
     <!-- Cloud Modal -->
     <div id="cloud-modal" class="modal">
         <div class="modal-content">
@@ -1172,28 +1290,24 @@
                     <h3 class="modal-section-title">למה לעבור לענן?</h3>
                     <p class="modal-section-text">
                         שרתים פיזיים זה עבר. הענן זה ההווה והעתיד. במקום לקנות שרתים יקרים, לשלם על חשמל ומיזוג, 
-                        ולהחזיק חדר שרתים - אתם משלמים רק על מה שאתם באמת משתמשים בו. 
-                        וכשהעסק גדל, התשתית גדלה איתכם בלחיצת כפתור.
+                        ולהחזיק חדר שרתים - אתם משלמים רק על מה שאתם באמת משתמשים בו.
                     </p>
                 </div>
-                
                 <div class="modal-section">
                     <h3 class="modal-section-title">איך אני עוזר לכם?</h3>
                     <ul class="benefit-list">
                         <li>בוחן את המצב הקיים - מה יש לכם עכשיו ולאן אתם צריכים להגיע</li>
                         <li>בונה תכנית מעבר חכמה - בשלבים, בלי לעצור את העסק</li>
                         <li>בוחר את הפלטפורמה הנכונה - AWS, Azure או Google Cloud</li>
-                        <li>מבצע את המעבר בצורה מבוקרת - בלילות או בסופי שבוע</li>
-                        <li>מוודא שהכל עובד - בדיקות מקיפות לפני שמעבירים הכל</li>
+                        <li>מבצע את המעבר בצורה מבוקרת</li>
                         <li>נשאר איתכם גם אחרי - תמיכה, אופטימיזציה וחיסכון בעלויות</li>
                     </ul>
                 </div>
-                
                 <div class="value-box">
                     <h4 class="value-title">הערך המוסף שלי</h4>
                     <p class="value-text">
                         אני לא סתם "מעביר שרתים". אני מבין את הצרכים העסקיים שלכם, בונה פתרון שחוסך לכם כסף, 
-                        ומוודא שאתם מוכנים לגדול. עשיתי את זה בארגונים בינלאומיים - עכשיו אני מביא את הידע הזה אליכם.
+                        ומוודא שאתם מוכנים לגדול.
                     </p>
                 </div>
             </div>
@@ -1212,11 +1326,9 @@
                 <div class="modal-section">
                     <h3 class="modal-section-title">למה זה קריטי?</h3>
                     <p class="modal-section-text">
-                        התקפת סייבר אחת יכולה להרוס עסק. כופרות, פישינג, גניבת מידע - זה לא "אם זה יקרה", אלא "מתי". 
-                        החדשות מלאות בחברות שנסגרו אחרי תקיפה. וזה לא קורה רק לגדולים - חברות קטנות הן יעד קל יותר.
+                        התקפת סייבר אחת יכולה להרוס עסק. כופרות, פישינג, גניבת מידע - זה לא "אם זה יקרה", אלא "מתי".
                     </p>
                 </div>
-                
                 <div class="modal-section">
                     <h3 class="modal-section-title">מה אני עושה?</h3>
                     <ul class="benefit-list">
@@ -1225,15 +1337,12 @@
                         <li>מגדיר גיבויים אוטומטיים - כל יום, לשלושה מקומות שונים</li>
                         <li>מדריך את העובדים - איך לזהות פישינג ולא ליפול למלכודות</li>
                         <li>מכין תוכנית התאוששות - מה עושים אם בכל זאת יש תקיפה</li>
-                        <li>עובד עם חברות ביטוח - מוודא שאתם עומדים בדרישות</li>
                     </ul>
                 </div>
-                
                 <div class="value-box">
                     <h4 class="value-title">הערך המוסף שלי</h4>
                     <p class="value-text">
-                        ניהלתי תקלות סייבר אמיתיות. ראיתי את ההשלכות. אני יודע איך לבנות הגנה שעובדת, 
-                        בלי להכביד על העובדים ובלי לפגוע בפרודוקטיביות. ביטחון זה לא רק טכנולוגיה - זה תהליך.
+                        ניהלתי תקלות סייבר אמיתיות. ראיתי את ההשלכות. אני יודע איך לבנות הגנה שעובדת.
                     </p>
                 </div>
             </div>
@@ -1252,11 +1361,9 @@
                 <div class="modal-section">
                     <h3 class="modal-section-title">למה M365?</h3>
                     <p class="modal-section-text">
-                        Word, Excel, Teams, OneDrive - כולם יודעים מה זה. אבל רוב החברות משתמשות רק ב-20% מהיכולות. 
-                        אתם משלמים על חבילה מלאה ומנצלים רבע ממנה. יש שם כלים מדהימים שיכולים לחסוך לכם שעות עבודה.
+                        Word, Excel, Teams, OneDrive - כולם יודעים מה זה. אבל רוב החברות משתמשות רק ב-20% מהיכולות.
                     </p>
                 </div>
-                
                 <div class="modal-section">
                     <h3 class="modal-section-title">איך אני מרוויח לכם?</h3>
                     <ul class="benefit-list">
@@ -1264,16 +1371,12 @@
                         <li>מגדיר את המערכת נכון - אבטחה, גיבויים, שיתוף קבצים חכם</li>
                         <li>מדריך את הצוות - איך להפיק את המקסימום מהכלים</li>
                         <li>משלב אוטומציות - Power Automate, Planner, משימות חוזרות</li>
-                        <li>מקים סביבת עבודה היברידית - משרד + בית בצורה חלקה</li>
-                        <li>תמיכה שוטפת - כשמישהו תקוע, אני פותר</li>
                     </ul>
                 </div>
-                
                 <div class="value-box">
                     <h4 class="value-title">הערך המוסף שלי</h4>
                     <p class="value-text">
-                        עבדתי עם M365 בארגונים עם מאות משתמשים. אני יודע את כל הטריקים, הקיצורים, והחסכונות. 
-                        אני הופך את M365 ממערכת מייל לכלי עבודה אמיתי שמרוויח לכם זמן וכסף.
+                        עבדתי עם M365 בארגונים עם מאות משתמשים. אני יודע את כל הטריקים, הקיצורים, והחסכונות.
                     </p>
                 </div>
             </div>
@@ -1292,28 +1395,22 @@
                 <div class="modal-section">
                     <h3 class="modal-section-title">מה זה אומר בפשטות?</h3>
                     <p class="modal-section-text">
-                        התשתית זה כל מה שגורם למחשבים שלכם לעבוד - האינטרנט, הרשת הפנימית, המדפסות, הטלפונים. 
-                        כשהתשתית לא טובה, הכל איטי, מתקלקל, ומשגע את כולם. כשהיא טובה - אף אחד לא שם לב, וזה בדיוק מה שצריך.
+                        התשתית זה כל מה שגורם למחשבים שלכם לעבוד - האינטרנט, הרשת הפנימית, המדפסות, הטלפונים.
                     </p>
                 </div>
-                
                 <div class="modal-section">
                     <h3 class="modal-section-title">מה אני משפר?</h3>
                     <ul class="benefit-list">
-                        <li>רשת מהירה ויציבה - Wi-Fi שעובד בכל פינה, כבלים מסודרים</li>
+                        <li>רשת מהירה ויציבה - Wi-Fi שעובד בכל פינה</li>
                         <li>שרתים שלא קורסים - מעבר לענן או שדרוג שרתים פיזיים</li>
-                        <li>מחשבים שעובדים - החלפה חכמה של תחנות ישנות</li>
                         <li>טלפוניה מתקדמת - VoIP חוסך כסף ומוסיף יכולות</li>
                         <li>מערכות גיבוי - אף פעם לא תאבדו קובץ</li>
-                        <li>מעקב וניטור - אני יודע על בעיה לפני שאתם</li>
                     </ul>
                 </div>
-                
                 <div class="value-box">
                     <h4 class="value-title">הערך המוסף שלי</h4>
                     <p class="value-text">
-                        בניתי תשתיות לארגונים בינלאומיים עם מאות עובדים. אני יודע מה עובד לטווח ארוך, 
-                        מה חוסך כסף, ומה גדל איתכם. אני לא רק מתקן - אני בונה בסיס איתן לעתיד.
+                        בניתי תשתיות לארגונים בינלאומיים עם מאות עובדים. אני יודע מה עובד לטווח ארוך.
                     </p>
                 </div>
             </div>
@@ -1332,12 +1429,9 @@
                 <div class="modal-section">
                     <h3 class="modal-section-title">למה AI עכשיו?</h3>
                     <p class="modal-section-text">
-                        AI זה לא עוד באזז. זה כלי עבודה אמיתי שיכול לחסוך לכם שעות כל יום. 
-                        כתיבת מיילים, סיכום פגישות, ניתוח נתונים, תשובות אוטומטיות - החברות שמשלבות AI עכשיו 
-                        מקבלות יתרון עצום על המתחרים.
+                        AI זה לא עוד באזז. זה כלי עבודה אמיתי שיכול לחסוך לכם שעות כל יום.
                     </p>
                 </div>
-                
                 <div class="modal-section">
                     <h3 class="modal-section-title">מה אני עושה?</h3>
                     <ul class="benefit-list">
@@ -1345,16 +1439,12 @@
                         <li>משלב ChatGPT בצורה חכמה - למכירות, שירות, תוכן</li>
                         <li>מטמיע Microsoft Copilot - AI בתוך Office שחוסך שעות</li>
                         <li>בונה אוטומציות - משימות חוזרות שנעשות לבד</li>
-                        <li>מדריך את הצוות - איך להשתמש נכון, מה האיסורים</li>
-                        <li>מגן על המידע - AI לא יברח עם הסודות שלכם</li>
                     </ul>
                 </div>
-                
                 <div class="value-box">
                     <h4 class="value-title">הערך המוסף שלי</h4>
                     <p class="value-text">
-                        אני לא סתם מתלהב מטכנולוגיה חדשה. אני מביא AI בצורה מעשית - רק מה שעובד, 
-                        רק מה שמרוויח זמן וכסף. אני גם מוודא שאתם לא חושפים מידע רגיש בדרך.
+                        אני מביא AI בצורה מעשית - רק מה שעובד, רק מה שמרוויח זמן וכסף.
                     </p>
                 </div>
             </div>
@@ -1373,28 +1463,22 @@
                 <div class="modal-section">
                     <h3 class="modal-section-title">למה זה חשוב?</h3>
                     <p class="modal-section-text">
-                        העובד הכי מסוכן בחברה זה לא ההאקר - זה העובד שלכם שלחץ על קישור מפישינג. 
                         90% מהפריצות מתחילות מטעות אנושית. אפשר להשקיע מיליונים באבטחה, אבל אם העובדים לא מודעים - זה כמו דלת פתוחה.
                     </p>
                 </div>
-                
                 <div class="modal-section">
                     <h3 class="modal-section-title">מה מלמדים?</h3>
                     <ul class="benefit-list">
                         <li>זיהוי פישינג - איך להבחין במייל מזויף ולא ליפול לזה</li>
                         <li>סיסמאות חזקות - למה "123456" זה רעיון גרוע</li>
                         <li>עבודה מהבית בבטחה - Wi-Fi ציבורי זה מסוכן</li>
-                        <li>שימוש בכלים חדשים - Teams, SharePoint, OneDrive נכון</li>
-                        <li>מה עושים בחשד - למי לפנות, איך לדווח מהר</li>
                         <li>תרגול אמיתי - סימולציות של פישינג כדי לתרגל</li>
                     </ul>
                 </div>
-                
                 <div class="value-box">
                     <h4 class="value-title">הערך המוסף שלי</h4>
                     <p class="value-text">
-                        ההדרכות שלי לא משעממות. אני מדבר בשפה פשוטה, עם דוגמאות אמיתיות, 
-                        ובלי להפחיד. העובדים יוצאים מודעים ומצוידים - לא מפוחדים.
+                        ההדרכות שלי לא משעממות. אני מדבר בשפה פשוטה, עם דוגמאות אמיתיות.
                     </p>
                 </div>
             </div>
@@ -1413,28 +1497,22 @@
                 <div class="modal-section">
                     <h3 class="modal-section-title">מה קורה באירוע?</h3>
                     <p class="modal-section-text">
-                        בוקר יום רגיל. פתאום אף אחד לא יכול להיכנס למערכות. על המסך: "כל הקבצים שלכם מוצפנים. 
-                        שלחו ביטקוין אם אתם רוצים אותם בחזרה." פאניקה מלאה. זה לא סרט - זה קורה כל יום לחברות בישראל.
+                        בוקר יום רגיל. פתאום אף אחד לא יכול להיכנס למערכות. על המסך: "כל הקבצים שלכם מוצפנים."
                     </p>
                 </div>
-                
                 <div class="modal-section">
                     <h3 class="modal-section-title">מה אני עושה?</h3>
                     <ul class="benefit-list">
                         <li>מגיב מיידית - עוצר את ההתפשטות לפני שזה הורס הכל</li>
                         <li>מבודד את הנגוע - מנתק מהרשת, מציל מה שאפשר</li>
-                        <li>חוקר מה קרה - איך נכנסו, מה נגעו, מי אשם</li>
+                        <li>חוקר מה קרה - איך נכנסו, מה נגעו</li>
                         <li>משחזר מגיבויים - מחזיר את המערכות לחיים</li>
-                        <li>סוגר את החור - מוודא שזה לא יקרה שוב</li>
-                        <li>מכין דו"ח - לביטוח, לרשויות, לנהלים</li>
                     </ul>
                 </div>
-                
                 <div class="value-box">
                     <h4 class="value-title">הערך המוסף שלי</h4>
                     <p class="value-text">
-                        ניהלתי אירועי סייבר אמיתיים. ראיתי פאניקה, הצלחתי לשחזר חברות שלמות. 
-                        אני יודע לשמור על קור רוח, לעבוד בשיטה, ולהחזיר אתכם לעבודה מהר.
+                        ניהלתי אירועי סייבר אמיתיים. ראיתי פאניקה, הצלחתי לשחזר חברות שלמות.
                     </p>
                 </div>
             </div>
@@ -1453,12 +1531,9 @@
                 <div class="modal-section">
                     <h3 class="modal-section-title">למה פרויקטי IT נכשלים?</h3>
                     <p class="modal-section-text">
-                        פרויקט IT זה לא "לקנות מחשבים חדשים". זה תכנון, תיאום ספקים, אינטגרציות, הדרכות, 
-                        מעבר נתונים, בדיקות, ותמיכה. רוב הפרויקטים עוברים תקציב או לא מסתיימים בכלל. 
-                        למה? כי אין למי לנהל אותם נכון.
+                        רוב הפרויקטים עוברים תקציב או לא מסתיימים בכלל. למה? כי אין למי לנהל אותם נכון.
                     </p>
                 </div>
-                
                 <div class="modal-section">
                     <h3 class="modal-section-title">איך אני מנהל?</h3>
                     <ul class="benefit-list">
@@ -1466,16 +1541,12 @@
                         <li>בונה תכנית עבודה - שלבים, אבני דרך, תאריכים</li>
                         <li>מנהל ספקים - מוודא שהם עומדים בלוחות זמנים</li>
                         <li>שומר על תקציב - אין הפתעות, כל שינוי מאושר</li>
-                        <li>מתקשר כל הזמן - כולם יודעים מה קורה תמיד</li>
-                        <li>סוגר בהצלחה - מסירה, הדרכה, ותמיכה</li>
                     </ul>
                 </div>
-                
                 <div class="value-box">
                     <h4 class="value-title">הערך המוסף שלי</h4>
                     <p class="value-text">
-                        ניהלתי פרויקטים של מיליוני שקלים בארגונים בינלאומיים. אני יודע איפה הבעיות, 
-                        איך למנוע אותן, ואיך להביא פרויקט לסיום בזמן ובתקציב. זה לא קסם - זה ניסיון.
+                        ניהלתי פרויקטים של מיליוני שקלים בארגונים בינלאומיים.
                     </p>
                 </div>
             </div>
@@ -1494,29 +1565,22 @@
                 <div class="modal-section">
                     <h3 class="modal-section-title">למה זה חשוב?</h3>
                     <p class="modal-section-text">
-                        רישיונות תוכנה זה לא סתם ניירת. משתמשים בתוכנה בלי רישיון? זה פלילי. 
-                        לא עומדים בתקני GDPR? קנסות של מאות אלפים. חברות ביטוח דורשות הוכחות אבטחה? 
-                        בלי זה אין ביטוח. זה לא משעמם - זה קריטי.
+                        רישיונות תוכנה זה לא סתם ניירת. משתמשים בתוכנה בלי רישיון? זה פלילי.
                     </p>
                 </div>
-                
                 <div class="modal-section">
                     <h3 class="modal-section-title">מה אני עושה?</h3>
                     <ul class="benefit-list">
                         <li>מסדר רישיונות - מוודא שאתם חוקיים 100%</li>
                         <li>חוסך כסף - מוצא רישיונות מיותרים ומבטל אותם</li>
                         <li>מכין לתאימות - GDPR, ISO, דרישות ביטוח</li>
-                        <li>מנהל חידושים - תזכורות, מעקב, ניהול מרכזי</li>
                         <li>עובד עם ביטוח - מוודא שעומדים בדרישות</li>
-                        <li>מכין לביקורות - תיעוד מסודר, הכל מוכן</li>
                     </ul>
                 </div>
-                
                 <div class="value-box">
                     <h4 class="value-title">הערך המוסף שלי</h4>
                     <p class="value-text">
-                        אני יודע איך לנווט בג'ונגל של רישיונות מיקרוסופט, אדובי, וכל השאר. 
-                        אני גם יודע מה חברות ביטוח באמת דורשות - לא סתם מילוי טפסים, אלא תאימות אמיתית.
+                        אני יודע איך לנווט בג'ונגל של רישיונות מיקרוסופט, אדובי, וכל השאר.
                     </p>
                 </div>
             </div>
@@ -1611,4 +1675,12 @@
         document.addEventListener('click', function(event) {
             const nav = document.querySelector('nav');
             const menuBtn = document.querySelector('.mobile-menu-btn');
-            const navLinks = doc
+            const navLinks = document.getElementById('navLinks');
+            
+            if (!nav.contains(event.target) && navLinks.classList.contains('active')) {
+                navLinks.classList.remove('active');
+            }
+        });
+    </script>
+</body>
+</html>
