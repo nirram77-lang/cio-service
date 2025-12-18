@@ -1539,7 +1539,231 @@
     <!-- Footer -->
     <footer>
         <p>© 2025 ניר רם | <a href="#">CIO as a Service</a> | מנהל מערכות מידע חיצוני</p>
+        <p style="margin-top: 15px;">
+            <a href="#" onclick="openPrivacyModal(); return false;">מדיניות פרטיות</a> | 
+            <a href="#" onclick="openAccessibilityPanel(); return false;">הצהרת נגישות</a>
+        </p>
     </footer>
+    
+    <!-- Accessibility Button -->
+    <button id="accessibilityBtn" onclick="openAccessibilityPanel()" aria-label="תפריט נגישות" style="
+        position: fixed;
+        bottom: 30px;
+        left: 30px;
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        background: linear-gradient(135deg, #00C896 0%, #00A8E8 100%);
+        border: none;
+        cursor: pointer;
+        z-index: 9999;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0 5px 25px rgba(0, 200, 150, 0.4);
+        transition: all 0.3s ease;
+        font-size: 28px;
+    ">
+        ♿
+    </button>
+    
+    <!-- Accessibility Panel -->
+    <div id="accessibilityPanel" style="
+        display: none;
+        position: fixed;
+        bottom: 100px;
+        left: 30px;
+        width: 320px;
+        max-height: 80vh;
+        overflow-y: auto;
+        background: rgba(10, 10, 10, 0.98);
+        border: 1px solid rgba(0, 200, 150, 0.3);
+        border-radius: 20px;
+        padding: 25px;
+        z-index: 9998;
+        box-shadow: 0 10px 50px rgba(0, 0, 0, 0.8);
+    ">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; border-bottom: 1px solid rgba(0, 200, 150, 0.2); padding-bottom: 15px;">
+            <h3 style="color: #00C896; font-size: 20px; font-weight: 700;">♿ תפריט נגישות</h3>
+            <button onclick="closeAccessibilityPanel()" style="background: none; border: none; color: #00C896; font-size: 24px; cursor: pointer;">×</button>
+        </div>
+        
+        <div style="display: flex; flex-direction: column; gap: 10px;">
+            <button class="access-btn" onclick="increaseFontSize()">🔤 הגדלת טקסט</button>
+            <button class="access-btn" onclick="decreaseFontSize()">🔡 הקטנת טקסט</button>
+            <button class="access-btn" onclick="toggleHighContrast()">🌓 ניגודיות גבוהה</button>
+            <button class="access-btn" onclick="toggleGrayscale()">🎨 גווני אפור</button>
+            <button class="access-btn" onclick="toggleUnderlineLinks()">🔗 הדגשת קישורים</button>
+            <button class="access-btn" onclick="toggleReadableFont()">📖 גופן קריא</button>
+            <button class="access-btn" onclick="toggleBigCursor()">🖱️ סמן גדול</button>
+            <button class="access-btn" onclick="toggleStopAnimations()">⏸️ עצירת אנימציות</button>
+            <button class="access-btn" onclick="resetAccessibility()" style="background: rgba(255, 100, 100, 0.2); border-color: rgba(255, 100, 100, 0.4);">🔄 איפוס הגדרות</button>
+        </div>
+        
+        <div style="margin-top: 20px; padding-top: 15px; border-top: 1px solid rgba(0, 200, 150, 0.2);">
+            <p style="font-size: 12px; color: #999; text-align: center;">
+                אתר זה עומד בתקן WCAG 2.1 AA<br>
+                לפניות בנושא נגישות: <a href="mailto:nir.ram77@gmail.com" style="color: #00C896;">nir.ram77@gmail.com</a>
+            </p>
+        </div>
+    </div>
+    
+    <!-- Privacy Policy Modal -->
+    <div id="privacyModal" style="
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(0, 0, 0, 0.95);
+        z-index: 10000;
+        overflow-y: auto;
+        padding: 40px 20px;
+    ">
+        <div style="
+            max-width: 800px;
+            margin: 0 auto;
+            background: rgba(10, 10, 10, 0.98);
+            border: 1px solid rgba(0, 200, 150, 0.3);
+            border-radius: 20px;
+            padding: 40px;
+        ">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 30px;">
+                <h2 style="color: #00C896; font-size: 28px;">🔒 מדיניות פרטיות</h2>
+                <button onclick="closePrivacyModal()" style="background: none; border: none; color: #00C896; font-size: 32px; cursor: pointer;">×</button>
+            </div>
+            
+            <div style="color: #cccccc; line-height: 1.8;">
+                <p style="margin-bottom: 20px;"><strong>עודכן לאחרונה:</strong> דצמבר 2025</p>
+                
+                <h3 style="color: #00C896; margin: 25px 0 15px;">1. כללי</h3>
+                <p>אתר זה ("האתר") מופעל על ידי ניר רם - שירותי CIO חיצוני ("אנחנו", "שלנו"). אנו מכבדים את פרטיותך ומחויבים להגן על המידע האישי שלך.</p>
+                
+                <h3 style="color: #00C896; margin: 25px 0 15px;">2. איזה מידע אנו אוספים</h3>
+                <p>באמצעות טופס יצירת הקשר באתר, אנו עשויים לאסוף:</p>
+                <ul style="margin: 15px 0; padding-right: 25px;">
+                    <li>שם מלא</li>
+                    <li>כתובת דואר אלקטרוני</li>
+                    <li>מספר טלפון (אופציונלי)</li>
+                    <li>שם החברה (אופציונלי)</li>
+                    <li>תוכן ההודעה</li>
+                </ul>
+                
+                <h3 style="color: #00C896; margin: 25px 0 15px;">3. כיצד אנו משתמשים במידע</h3>
+                <p>המידע שנאסף משמש אך ורק למטרות הבאות:</p>
+                <ul style="margin: 15px 0; padding-right: 25px;">
+                    <li>יצירת קשר חוזר לגבי פנייתך</li>
+                    <li>מתן שירותי ייעוץ ותמיכה</li>
+                    <li>שליחת מידע רלוונטי (רק אם ניתנה הסכמה)</li>
+                </ul>
+                
+                <h3 style="color: #00C896; margin: 25px 0 15px;">4. שמירה ואבטחת המידע</h3>
+                <p>אנו נוקטים באמצעי אבטחה מקובלים להגנה על המידע האישי שלך. המידע נשמר למשך הזמן הנדרש למתן השירות ובהתאם לדרישות החוק.</p>
+                
+                <h3 style="color: #00C896; margin: 25px 0 15px;">5. העברת מידע לצדדים שלישיים</h3>
+                <p>אנו לא מוכרים, משכירים או מעבירים את המידע האישי שלך לצדדים שלישיים, למעט במקרים הבאים:</p>
+                <ul style="margin: 15px 0; padding-right: 25px;">
+                    <li>כאשר נדרש על פי חוק</li>
+                    <li>לצורך הגנה על זכויותינו המשפטיות</li>
+                </ul>
+                
+                <h3 style="color: #00C896; margin: 25px 0 15px;">6. זכויותיך</h3>
+                <p>בהתאם לחוק הגנת הפרטיות, הנך זכאי:</p>
+                <ul style="margin: 15px 0; padding-right: 25px;">
+                    <li>לעיין במידע השמור אודותיך</li>
+                    <li>לבקש תיקון או מחיקה של המידע</li>
+                    <li>להתנגד לשימוש במידע למטרות שיווק</li>
+                </ul>
+                
+                <h3 style="color: #00C896; margin: 25px 0 15px;">7. עוגיות (Cookies)</h3>
+                <p>האתר עשוי להשתמש בעוגיות לצורך שיפור חווית המשתמש וניתוח תנועה באתר. ניתן לשלוט בהגדרות העוגיות דרך הדפדפן.</p>
+                
+                <h3 style="color: #00C896; margin: 25px 0 15px;">8. יצירת קשר</h3>
+                <p>לכל שאלה בנוגע למדיניות הפרטיות או לבקשות הנוגעות למידע האישי שלך, ניתן לפנות אלינו:</p>
+                <p style="margin-top: 10px;">
+                    📧 <a href="mailto:nir.ram77@gmail.com" style="color: #00C896;">nir.ram77@gmail.com</a><br>
+                    📱 <a href="tel:+972522653170" style="color: #00C896;">052-265-3170</a>
+                </p>
+                
+                <h3 style="color: #00C896; margin: 25px 0 15px;">9. שינויים במדיניות</h3>
+                <p>אנו שומרים לעצמנו את הזכות לעדכן מדיניות זו מעת לעת. שינויים מהותיים יפורסמו באתר.</p>
+            </div>
+            
+            <button onclick="closePrivacyModal()" style="
+                width: 100%;
+                margin-top: 30px;
+                padding: 15px;
+                background: linear-gradient(135deg, #00C896 0%, #00A8E8 100%);
+                border: none;
+                border-radius: 50px;
+                color: #000;
+                font-size: 16px;
+                font-weight: 700;
+                cursor: pointer;
+            ">סגור</button>
+        </div>
+    </div>
+    
+    <style>
+        /* Accessibility Button Styles */
+        #accessibilityBtn:hover {
+            transform: scale(1.1);
+            box-shadow: 0 8px 35px rgba(0, 200, 150, 0.6);
+        }
+        
+        .access-btn {
+            width: 100%;
+            padding: 12px 15px;
+            background: rgba(0, 200, 150, 0.1);
+            border: 1px solid rgba(0, 200, 150, 0.3);
+            border-radius: 10px;
+            color: #ffffff;
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-align: right;
+            font-family: 'Assistant', sans-serif;
+        }
+        
+        .access-btn:hover {
+            background: rgba(0, 200, 150, 0.2);
+            border-color: #00C896;
+        }
+        
+        .access-btn.active {
+            background: rgba(0, 200, 150, 0.3);
+            border-color: #00C896;
+            box-shadow: 0 0 10px rgba(0, 200, 150, 0.3);
+        }
+        
+        /* Accessibility States */
+        body.high-contrast {
+            filter: contrast(1.5);
+        }
+        
+        body.grayscale {
+            filter: grayscale(100%);
+        }
+        
+        body.underline-links a {
+            text-decoration: underline !important;
+        }
+        
+        body.readable-font * {
+            font-family: Arial, sans-serif !important;
+        }
+        
+        body.big-cursor, body.big-cursor * {
+            cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='48' height='48' viewBox='0 0 24 24' fill='%2300C896'%3E%3Cpath d='M7 2l12 11.2-5.8.5 3.3 7.3-2.2 1-3.2-7.4L7 18.5V2z'/%3E%3C/svg%3E"), auto !important;
+        }
+        
+        body.stop-animations * {
+            animation: none !important;
+            transition: none !important;
+        }
+    </style>
     
     <script>
         // ========== PARTICLES ==========
@@ -1678,6 +1902,119 @@
             e.preventDefault();
             alert('תודה על הפנייה! אחזור אליכם בהקדם.');
             this.reset();
+        });
+        
+        // ========== ACCESSIBILITY FUNCTIONS ==========
+        let fontSize = 100;
+        
+        function openAccessibilityPanel() {
+            document.getElementById('accessibilityPanel').style.display = 'block';
+        }
+        
+        function closeAccessibilityPanel() {
+            document.getElementById('accessibilityPanel').style.display = 'none';
+        }
+        
+        function openPrivacyModal() {
+            document.getElementById('privacyModal').style.display = 'block';
+            document.body.style.overflow = 'hidden';
+        }
+        
+        function closePrivacyModal() {
+            document.getElementById('privacyModal').style.display = 'none';
+            document.body.style.overflow = 'auto';
+        }
+        
+        function increaseFontSize() {
+            if (fontSize < 150) {
+                fontSize += 10;
+                document.body.style.fontSize = fontSize + '%';
+            }
+        }
+        
+        function decreaseFontSize() {
+            if (fontSize > 70) {
+                fontSize -= 10;
+                document.body.style.fontSize = fontSize + '%';
+            }
+        }
+        
+        function toggleHighContrast() {
+            document.body.classList.toggle('high-contrast');
+            document.body.classList.remove('grayscale');
+            updateButtonStates();
+        }
+        
+        function toggleGrayscale() {
+            document.body.classList.toggle('grayscale');
+            document.body.classList.remove('high-contrast');
+            updateButtonStates();
+        }
+        
+        function toggleUnderlineLinks() {
+            document.body.classList.toggle('underline-links');
+            updateButtonStates();
+        }
+        
+        function toggleReadableFont() {
+            document.body.classList.toggle('readable-font');
+            updateButtonStates();
+        }
+        
+        function toggleBigCursor() {
+            document.body.classList.toggle('big-cursor');
+            updateButtonStates();
+        }
+        
+        function toggleStopAnimations() {
+            document.body.classList.toggle('stop-animations');
+            updateButtonStates();
+        }
+        
+        function resetAccessibility() {
+            fontSize = 100;
+            document.body.style.fontSize = '100%';
+            document.body.classList.remove('high-contrast', 'grayscale', 'underline-links', 'readable-font', 'big-cursor', 'stop-animations');
+            updateButtonStates();
+        }
+        
+        function updateButtonStates() {
+            const buttons = document.querySelectorAll('.access-btn');
+            buttons.forEach(btn => btn.classList.remove('active'));
+            
+            if (document.body.classList.contains('high-contrast')) {
+                document.querySelector('.access-btn[onclick*="HighContrast"]').classList.add('active');
+            }
+            if (document.body.classList.contains('grayscale')) {
+                document.querySelector('.access-btn[onclick*="Grayscale"]').classList.add('active');
+            }
+            if (document.body.classList.contains('underline-links')) {
+                document.querySelector('.access-btn[onclick*="UnderlineLinks"]').classList.add('active');
+            }
+            if (document.body.classList.contains('readable-font')) {
+                document.querySelector('.access-btn[onclick*="ReadableFont"]').classList.add('active');
+            }
+            if (document.body.classList.contains('big-cursor')) {
+                document.querySelector('.access-btn[onclick*="BigCursor"]').classList.add('active');
+            }
+            if (document.body.classList.contains('stop-animations')) {
+                document.querySelector('.access-btn[onclick*="StopAnimations"]').classList.add('active');
+            }
+        }
+        
+        // Close panels on Escape
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                closeAccessibilityPanel();
+                closePrivacyModal();
+            }
+        });
+        
+        // Close privacy modal on outside click
+        document.getElementById('privacyModal').addEventListener('click', function(e) {
+            if (e.target === this) {
+                closePrivacyModal();
+            }
         });
     </script>
 </body>
