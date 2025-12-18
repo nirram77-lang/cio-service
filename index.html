@@ -1540,8 +1540,8 @@
     <footer>
         <p>© 2025 ניר רם | <a href="#">CIO as a Service</a> | מנהל מערכות מידע חיצוני</p>
         <p style="margin-top: 15px;">
-            <a href="#" onclick="openPrivacyModal(); return false;">מדיניות פרטיות</a> | 
-            <a href="#" onclick="openAccessibilityPanel(); return false;">הצהרת נגישות</a>
+            <a href="#" onclick="openPrivacyModal(); return false;" style="color: #00C896;">מדיניות פרטיות</a> | 
+            <a href="#" onclick="openAccessibilityStatement(); return false;" style="color: #00C896;">הצהרת נגישות</a>
         </p>
     </footer>
     
@@ -1601,10 +1601,127 @@
         </div>
         
         <div style="margin-top: 20px; padding-top: 15px; border-top: 1px solid rgba(0, 200, 150, 0.2);">
-            <p style="font-size: 12px; color: #999; text-align: center;">
-                אתר זה עומד בתקן WCAG 2.1 AA<br>
-                לפניות בנושא נגישות: <a href="mailto:nir.ram77@gmail.com" style="color: #00C896;">nir.ram77@gmail.com</a>
-            </p>
+            <button onclick="closeAccessibilityPanel(); openAccessibilityStatement();" style="
+                width: 100%;
+                padding: 10px;
+                background: transparent;
+                border: 1px solid rgba(0, 200, 150, 0.3);
+                border-radius: 10px;
+                color: #00C896;
+                font-size: 14px;
+                cursor: pointer;
+                font-family: 'Assistant', sans-serif;
+            ">📋 הצהרת נגישות מלאה</button>
+        </div>
+    </div>
+    
+    <!-- Accessibility Statement Modal -->
+    <div id="accessibilityStatementModal" style="
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(0, 0, 0, 0.95);
+        z-index: 10000;
+        overflow-y: auto;
+        padding: 40px 20px;
+    ">
+        <div style="
+            max-width: 800px;
+            margin: 0 auto;
+            background: rgba(10, 10, 10, 0.98);
+            border: 1px solid rgba(0, 200, 150, 0.3);
+            border-radius: 20px;
+            padding: 40px;
+        ">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 30px;">
+                <h2 style="color: #00C896; font-size: 28px;">♿ הצהרת נגישות</h2>
+                <button onclick="closeAccessibilityStatement()" style="background: none; border: none; color: #00C896; font-size: 32px; cursor: pointer;">×</button>
+            </div>
+            
+            <div style="color: #cccccc; line-height: 1.8;">
+                <p style="margin-bottom: 20px;"><strong>עודכן לאחרונה:</strong> דצמבר 2025</p>
+                
+                <h3 style="color: #00C896; margin: 25px 0 15px;">1. מחויבות לנגישות</h3>
+                <p>ניר רם - שירותי CIO חיצוני מחויב לאפשר לאנשים עם מוגבלות להשתמש באתר בצורה שוויונית ונוחה. אנו פועלים להנגשת האתר בהתאם לתקנות שוויון זכויות לאנשים עם מוגבלות (התאמות נגישות לשירות), התשע"ג-2013 ולתקן הישראלי ת"י 5568 המבוסס על הנחיות WCAG 2.1 ברמה AA.</p>
+                
+                <h3 style="color: #00C896; margin: 25px 0 15px;">2. התאמות הנגישות באתר</h3>
+                <p>באתר זה בוצעו התאמות הנגישות הבאות:</p>
+                <ul style="margin: 15px 0; padding-right: 25px;">
+                    <li>תפריט נגישות עם אפשרויות התאמה אישית</li>
+                    <li>אפשרות להגדלה והקטנה של טקסט</li>
+                    <li>מצב ניגודיות גבוהה</li>
+                    <li>מצב גווני אפור</li>
+                    <li>הדגשת קישורים</li>
+                    <li>אפשרות לגופן קריא</li>
+                    <li>סמן מוגדל</li>
+                    <li>עצירת אנימציות</li>
+                    <li>ניווט באמצעות מקלדת</li>
+                    <li>תיאורי תמונות (alt text)</li>
+                    <li>מבנה כותרות היררכי</li>
+                    <li>ניגודיות צבעים מותאמת</li>
+                </ul>
+                
+                <h3 style="color: #00C896; margin: 25px 0 15px;">3. דפדפנים נתמכים</h3>
+                <p>האתר תומך בדפדפנים הנפוצים בגרסאותיהם העדכניות:</p>
+                <ul style="margin: 15px 0; padding-right: 25px;">
+                    <li>Google Chrome</li>
+                    <li>Mozilla Firefox</li>
+                    <li>Microsoft Edge</li>
+                    <li>Apple Safari</li>
+                </ul>
+                
+                <h3 style="color: #00C896; margin: 25px 0 15px;">4. טכנולוגיות מסייעות</h3>
+                <p>האתר תוכנן לתמיכה בטכנולוגיות מסייעות כגון:</p>
+                <ul style="margin: 15px 0; padding-right: 25px;">
+                    <li>תוכנות קראי מסך (Screen Readers)</li>
+                    <li>תוכנות הגדלה</li>
+                    <li>ניווט באמצעות מקלדת בלבד</li>
+                </ul>
+                
+                <h3 style="color: #00C896; margin: 25px 0 15px;">5. הסדרי נגישות במשרד</h3>
+                <p>פגישות ייעוץ מתקיימות בהתאמה לצרכי הלקוח, כולל:</p>
+                <ul style="margin: 15px 0; padding-right: 25px;">
+                    <li>אפשרות לפגישות וירטואליות (Zoom/Teams)</li>
+                    <li>הגעה למשרדי הלקוח</li>
+                    <li>גמישות בתיאום מועדים</li>
+                </ul>
+                
+                <h3 style="color: #00C896; margin: 25px 0 15px;">6. פרטי רכז הנגישות</h3>
+                <div style="background: rgba(0, 200, 150, 0.1); border: 1px solid rgba(0, 200, 150, 0.3); border-radius: 15px; padding: 20px; margin: 15px 0;">
+                    <p><strong style="color: #00C896;">שם:</strong> ניר רם</p>
+                    <p><strong style="color: #00C896;">טלפון:</strong> <a href="tel:+972522653170" style="color: #00C896;">052-265-3170</a></p>
+                    <p><strong style="color: #00C896;">דוא"ל:</strong> <a href="mailto:nir.ram77@gmail.com" style="color: #00C896;">nir.ram77@gmail.com</a></p>
+                </div>
+                
+                <h3 style="color: #00C896; margin: 25px 0 15px;">7. דיווח על בעיות נגישות</h3>
+                <p>אם נתקלתם בבעיית נגישות באתר, נשמח לשמוע מכם כדי שנוכל לטפל בה. ניתן לפנות אלינו באחת הדרכים הבאות:</p>
+                <ul style="margin: 15px 0; padding-right: 25px;">
+                    <li>טלפון: <a href="tel:+972522653170" style="color: #00C896;">052-265-3170</a></li>
+                    <li>דוא"ל: <a href="mailto:nir.ram77@gmail.com" style="color: #00C896;">nir.ram77@gmail.com</a></li>
+                    <li>טופס יצירת קשר באתר</li>
+                </ul>
+                <p>אנו מתחייבים לטפל בכל פנייה בנושא נגישות תוך 14 ימי עסקים.</p>
+                
+                <h3 style="color: #00C896; margin: 25px 0 15px;">8. עדכון הצהרת הנגישות</h3>
+                <p>הצהרה זו נבדקת ומתעדכנת באופן שוטף. אנו ממשיכים לפעול לשיפור נגישות האתר ולהתאמתו לצרכי כלל המשתמשים.</p>
+            </div>
+            
+            <button onclick="closeAccessibilityStatement()" style="
+                width: 100%;
+                margin-top: 30px;
+                padding: 15px;
+                background: linear-gradient(135deg, #00C896 0%, #00A8E8 100%);
+                border: none;
+                border-radius: 50px;
+                color: #000;
+                font-size: 16px;
+                font-weight: 700;
+                cursor: pointer;
+                font-family: 'Assistant', sans-serif;
+            ">סגור</button>
         </div>
     </div>
     
@@ -1701,6 +1818,7 @@
                 font-size: 16px;
                 font-weight: 700;
                 cursor: pointer;
+                font-family: 'Assistant', sans-serif;
             ">סגור</button>
         </div>
     </div>
@@ -1915,6 +2033,16 @@
             document.getElementById('accessibilityPanel').style.display = 'none';
         }
         
+        function openAccessibilityStatement() {
+            document.getElementById('accessibilityStatementModal').style.display = 'block';
+            document.body.style.overflow = 'hidden';
+        }
+        
+        function closeAccessibilityStatement() {
+            document.getElementById('accessibilityStatementModal').style.display = 'none';
+            document.body.style.overflow = 'auto';
+        }
+        
         function openPrivacyModal() {
             document.getElementById('privacyModal').style.display = 'block';
             document.body.style.overflow = 'hidden';
@@ -2007,13 +2135,20 @@
             if (e.key === 'Escape') {
                 closeAccessibilityPanel();
                 closePrivacyModal();
+                closeAccessibilityStatement();
             }
         });
         
-        // Close privacy modal on outside click
+        // Close modals on outside click
         document.getElementById('privacyModal').addEventListener('click', function(e) {
             if (e.target === this) {
                 closePrivacyModal();
+            }
+        });
+        
+        document.getElementById('accessibilityStatementModal').addEventListener('click', function(e) {
+            if (e.target === this) {
+                closeAccessibilityStatement();
             }
         });
     </script>
