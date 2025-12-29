@@ -355,6 +355,47 @@
             to { opacity: 1; transform: translateY(0); }
         }
         
+        /* ═══════════════════════════════════════════════════════════════ */
+        /* TESTIMONIAL QUOTE - NEW */
+        /* ═══════════════════════════════════════════════════════════════ */
+        .hero-testimonial {
+            max-width: 700px;
+            margin: 0 auto 40px;
+            padding: 25px 35px;
+            background: linear-gradient(135deg, rgba(0, 200, 150, 0.08) 0%, rgba(0, 168, 232, 0.05) 100%);
+            border: 1px solid rgba(0, 200, 150, 0.25);
+            border-right: 3px solid #00C896;
+            border-radius: 15px;
+            position: relative;
+            animation: fadeInUp 1s ease 0.7s both;
+        }
+        
+        .hero-testimonial::before {
+            content: '"';
+            position: absolute;
+            top: -10px;
+            right: 20px;
+            font-size: 60px;
+            color: rgba(0, 200, 150, 0.3);
+            font-family: Georgia, serif;
+            line-height: 1;
+        }
+        
+        .hero-testimonial-text {
+            font-size: 18px;
+            color: #e0e0e0;
+            font-style: italic;
+            line-height: 1.7;
+            margin-bottom: 12px;
+        }
+        
+        .hero-testimonial-author {
+            font-size: 14px;
+            color: #00C896;
+            font-weight: 700;
+            font-style: normal;
+        }
+        
         .stats-container {
             display: flex;
             gap: 50px;
@@ -1117,6 +1158,7 @@
             .case-study-stats { justify-content: center; }
             .experience-timeline { padding-right: 30px; }
             .accordion-body { padding-left: 30px; }
+            .hero-testimonial { padding: 20px 25px; }
         }
     </style>
 </head>
@@ -1150,6 +1192,15 @@
                 </h1>
                 <p class="hero-subtitle">שירותי CIO חיצוני לחברות קטנות ובינוניות<br>שלא יכולות להרשות לעצמן מנהל IT במשרה מלאה</p>
                 <p class="hero-description"><span class="highlight">12+ שנות ניסיון</span> בניהול תשתיות IT מורכבות בארגונים מובילים<br>עכשיו זמין לכם במחיר גמיש</p>
+                
+                <!-- ═══════════════════════════════════════════════════════════════ -->
+                <!-- TESTIMONIAL QUOTE - NEW -->
+                <!-- ═══════════════════════════════════════════════════════════════ -->
+                <div class="hero-testimonial">
+                    <p class="hero-testimonial-text">החזיר אותנו לרציפות תפעולית מלאה אחרי אירוע סייבר מורכב. מחויבות גבוהה, גישה שירותית יוצאת דופן.</p>
+                    <span class="hero-testimonial-author">— סמנכ"ל, פתחון לב</span>
+                </div>
+                
                 <div class="stats-container">
                     <div class="stat"><div class="stat-number" data-target="12">0</div><div class="stat-label">שנות ניסיון</div></div>
                     <div class="stat"><div class="stat-number" data-target="4">0</div><div class="stat-label">תפקידי מנמ"ר</div></div>
@@ -1307,11 +1358,11 @@
                     <div class="free-offer">
                         <h4 class="free-offer-title">🎁 שעת ייעוץ חינם כוללת:</h4>
                         <ul class="free-offer-list">
-                            <li>מיפוי מלא של המצב הקיים</li>
-                            <li>זיהוי סיכונים ונקודות תורפה</li>
-                            <li>המלצות מקצועיות לשיפור</li>
-                            <li>סקירת תשתיות ואבטחה</li>
-                            <li>תכנית פעולה מותאמת</li>
+                            <li>סקירה ראשונית של מצב התשתיות</li>
+                            <li>זיהוי נקודות כאב מרכזיות</li>
+                            <li>המלצות ראשוניות לשיפור</li>
+                            <li>תמונת מצב ברורה ב-High Level</li>
+                            <li>בלי התחייבות, בלי לחץ</li>
                         </ul>
                     </div>
                     <div class="contact-methods">
