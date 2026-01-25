@@ -1104,9 +1104,42 @@
         .noartgallery-link:hover .noartgallery-logo { filter: drop-shadow(0 0 12px rgba(212, 175, 55, 0.8)) drop-shadow(0 0 25px rgba(201, 162, 39, 0.5)); }
         .noartgallery-logo { height: 32px; width: auto; filter: drop-shadow(0 0 8px rgba(212, 175, 55, 0.5)) drop-shadow(0 0 15px rgba(201, 162, 39, 0.3)); transition: filter 0.3s ease; }
         
+        /* Accessibility Button - Bottle Green Style (like No Art Gallery) */
+        #accessibilityBtn {
+            position: fixed;
+            bottom: 30px;
+            left: 30px;
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            background: linear-gradient(145deg, #1a5c45 0%, #228B22 50%, #2e8b57 100%);
+            border: 2px solid rgba(34, 139, 34, 0.6);
+            cursor: pointer;
+            z-index: 9999;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 15px rgba(34, 139, 34, 0.4), 0 2px 8px rgba(0, 0, 0, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.2);
+            transition: all 0.3s ease;
+            color: #fff;
+        }
+        
+        #accessibilityBtn svg {
+            width: 22px;
+            height: 22px;
+            stroke: white;
+            stroke-width: 2.5;
+            fill: none;
+        }
+        
         #accessibilityBtn:hover {
             transform: scale(1.1);
-            box-shadow: 0 8px 35px rgba(0, 200, 150, 0.6);
+            box-shadow: 0 6px 25px rgba(34, 139, 34, 0.6), 0 4px 12px rgba(0, 0, 0, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.3);
+            background: linear-gradient(145deg, #228B22 0%, #2e8b57 50%, #3cb371 100%);
+        }
+        
+        #accessibilityBtn:active {
+            transform: scale(0.95);
         }
         
         .access-btn {
@@ -1398,7 +1431,7 @@
                         </ul>
                     </div>
                     <div class="contact-methods">
-                        <div class="contact-method"><span class="contact-method-icon">📧</span><a href="/cdn-cgi/l/email-protection#a1cfc8d3e1c6cec2c8ce8fced3c6"><span class="__cf_email__" data-cfemail="4826213a082f272b212766273a2f">[email&#160;protected]</span></a></div>
+                        <div class="contact-method"><span class="contact-method-icon">📧</span><a href="/cdn-cgi/l/email-protection#ea848398aa8d85898385c485988d"><span class="__cf_email__" data-cfemail="2846415a684f474b414706475a4f">[email&#160;protected]</span></a></div>
                         <div class="contact-method"><span class="contact-method-icon">📱</span><a href="tel:+972522653170">052-265-3170</a></div>
                         <div class="contact-method"><span class="contact-method-icon">🌐</span><a href="https://gocio.org">gocio.org</a></div>
                         <div class="contact-method"><span class="contact-method-icon">📍</span><span>זמין לפגישות בכל הארץ</span></div>
@@ -1430,7 +1463,12 @@
         </a>
     </footer>
     
-    <button id="accessibilityBtn" onclick="openAccessibilityPanel()" aria-label="תפריט נגישות" style="position: fixed; bottom: 30px; left: 30px; width: 60px; height: 60px; border-radius: 50%; background: linear-gradient(135deg, #00C896 0%, #00A8E8 100%); border: none; cursor: pointer; z-index: 9999; display: flex; align-items: center; justify-content: center; box-shadow: 0 5px 25px rgba(0, 200, 150, 0.4); transition: all 0.3s ease; font-size: 28px;">♿</button>
+    <button id="accessibilityBtn" onclick="openAccessibilityPanel()" aria-label="תפריט נגישות">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+            <circle cx="12" cy="4" r="2"/>
+            <path d="M12 6v4m0 0l-4 8m4-8l4 8M6 12h12"/>
+        </svg>
+    </button>
     
     <div id="accessibilityPanel" style="display: none; position: fixed; bottom: 100px; left: 30px; width: 320px; max-height: 80vh; overflow-y: auto; background: rgba(10, 10, 10, 0.98); border: 1px solid rgba(0, 200, 150, 0.3); border-radius: 20px; padding: 25px; z-index: 9998; box-shadow: 0 10px 50px rgba(0, 0, 0, 0.8);">
         <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; border-bottom: 1px solid rgba(0, 200, 150, 0.2); padding-bottom: 15px;">
@@ -1472,7 +1510,7 @@
                 <div style="background: rgba(0, 200, 150, 0.1); border: 1px solid rgba(0, 200, 150, 0.3); border-radius: 15px; padding: 20px; margin: 15px 0;">
                     <p><strong style="color: #00C896;">שם:</strong> ניר רם</p>
                     <p><strong style="color: #00C896;">טלפון:</strong> <a href="tel:+972522653170" style="color: #00C896;">052-265-3170</a></p>
-                    <p><strong style="color: #00C896;">דוא"ל:</strong> <a href="/cdn-cgi/l/email-protection#dfb1b6ad9fb8b0bcb6b0f1b0adb8" style="color: #00C896;"><span class="__cf_email__" data-cfemail="b7d9dec5f7d0d8d4ded899d8c5d0">[email&#160;protected]</span></a></p>
+                    <p><strong style="color: #00C896;">דוא"ל:</strong> <a href="/cdn-cgi/l/email-protection#d6b8bfa496b1b9b5bfb9f8b9a4b1" style="color: #00C896;"><span class="__cf_email__" data-cfemail="d6b8bfa496b1b9b5bfb9f8b9a4b1">[email&#160;protected]</span></a></p>
                 </div>
                 <h3 style="color: #00C896; margin: 25px 0 15px;">5. דיווח על בעיות נגישות</h3>
                 <p>אם נתקלתם בבעיית נגישות באתר, נשמח לשמוע מכם. אנו מתחייבים לטפל בכל פנייה בנושא נגישות תוך 14 ימי עסקים.</p>
@@ -1494,15 +1532,14 @@
                 <h3 style="color: #00C896; margin: 25px 0 15px;">2. איזה מידע אנו אוספים</h3>
                 <p>באמצעות טופס יצירת הקשר: שם מלא, כתובת דואר אלקטרוני, מספר טלפון (אופציונלי), שם החברה (אופציונלי), תוכן ההודעה.</p>
                 <h3 style="color: #00C896; margin: 25px 0 15px;">3. כיצד אנו משתמשים במידע</h3>
-                <p>המידע משמש אך ורק ליצירת קשר חוזר, מתן שירותי ייעוץ ותמיכה, ושליחת מידע רלוונטי (רק אם ניתנה הסכמה).</p>
-                <h3 style="color: #00C896; margin: 25px 0 15px;">4. יצירת קשר</h3>
-                <p>📧 <a href="/cdn-cgi/l/email-protection#98f6f1ead8fff7fbf1f7b6f7eaff" style="color: #00C896;"><span class="__cf_email__" data-cfemail="355b5c4775525a565c5a1b5a4752">[email&#160;protected]</span></a> | 📱 <a href="tel:+972522653170" style="color: #00C896;">052-265-3170</a></p>
+                <p>המידע משמש אךh3>
+                <p>📧 <a href="mailto:nir@gocio.org" style="color: #00C896;">nir@gocio.org</a> | 📱 <a href="tel:+972522653170" style="color: #00C896;">052-265-3170</a></p>
             </div>
             <button onclick="closePrivacyModal()" style="width: 100%; margin-top: 30px; padding: 15px; background: linear-gradient(135deg, #00C896 0%, #00A8E8 100%); border: none; border-radius: 50px; color: #000; font-size: 16px; font-weight: 700; cursor: pointer; font-family: 'Assistant', sans-serif;">סגור</button>
         </div>
     </div>
     
-    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+    <script>
         function createParticles() { const container = document.getElementById('particles'); for (let i = 0; i < 30; i++) { const particle = document.createElement('div'); particle.className = 'particle'; particle.style.left = Math.random() * 100 + '%'; particle.style.animationDelay = Math.random() * 15 + 's'; particle.style.animationDuration = (15 + Math.random() * 10) + 's'; container.appendChild(particle); } }
         createParticles();
         
@@ -1544,4 +1581,9 @@
         function toggleStopAnimations() { document.body.classList.toggle('stop-animations'); }
         function resetAccessibility() { fontSize = 100; document.body.style.fontSize = '100%'; document.body.classList.remove('high-contrast', 'grayscale', 'underline-links', 'readable-font', 'big-cursor', 'stop-animations'); }
         
-        document.addEventLis
+        document.addEventListener('keydown', function(e) { if (e.key === 'Escape') { closeAccessibilityPanel(); closePrivacyModal(); closeAccessibilityStatement(); } });
+        document.getElementById('privacyModal').addEventListener('click', function(e) { if (e.target === this) { closePrivacyModal(); } });
+        document.getElementById('accessibilityStatementModal').addEventListener('click', function(e) { if (e.target === this) { closeAccessibilityStatement(); } });
+    </script>
+</body>
+</html>
