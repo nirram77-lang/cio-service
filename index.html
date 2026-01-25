@@ -1098,6 +1098,12 @@
             text-decoration: none;
         }
         
+        /* No Art Gallery - Parent Brand */
+        .noartgallery-link { display: inline-block; margin: 20px 0; opacity: 0.85; transition: all 0.3s ease; }
+        .noartgallery-link:hover { opacity: 1; transform: scale(1.05); }
+        .noartgallery-link:hover .noartgallery-logo { filter: drop-shadow(0 0 12px rgba(212, 175, 55, 0.8)) drop-shadow(0 0 25px rgba(201, 162, 39, 0.5)); }
+        .noartgallery-logo { height: 32px; width: auto; filter: drop-shadow(0 0 8px rgba(212, 175, 55, 0.5)) drop-shadow(0 0 15px rgba(201, 162, 39, 0.3)); transition: filter 0.3s ease; }
+        
         #accessibilityBtn:hover {
             transform: scale(1.1);
             box-shadow: 0 8px 35px rgba(0, 200, 150, 0.6);
@@ -1392,7 +1398,7 @@
                         </ul>
                     </div>
                     <div class="contact-methods">
-                        <div class="contact-method"><span class="contact-method-icon">📧</span><a href="mailto:nir@gocio.org">nir@gocio.org</a></div>
+                        <div class="contact-method"><span class="contact-method-icon">📧</span><a href="/cdn-cgi/l/email-protection#a1cfc8d3e1c6cec2c8ce8fced3c6"><span class="__cf_email__" data-cfemail="4826213a082f272b212766273a2f">[email&#160;protected]</span></a></div>
                         <div class="contact-method"><span class="contact-method-icon">📱</span><a href="tel:+972522653170">052-265-3170</a></div>
                         <div class="contact-method"><span class="contact-method-icon">🌐</span><a href="https://gocio.org">gocio.org</a></div>
                         <div class="contact-method"><span class="contact-method-icon">📍</span><span>זמין לפגישות בכל הארץ</span></div>
@@ -1417,6 +1423,11 @@
     <footer>
         <p>© 2025 ניר רם | <a href="https://gocio.org">CIO as a Service</a> | מנהל מערכות מידע חיצוני</p>
         <p style="margin-top: 15px;"><a href="#" onclick="openPrivacyModal(); return false;" style="color: #00C896;">מדיניות פרטיות</a> | <a href="#" onclick="openAccessibilityStatement(); return false;" style="color: #00C896;">הצהרת נגישות</a></p>
+        
+        <!-- No Art Gallery - Parent Brand -->
+        <a href="https://noartgallery.com" target="_blank" rel="noopener noreferrer" class="noartgallery-link">
+            <img src="noartgallery-logo.png" alt="No Art Gallery" class="noartgallery-logo">
+        </a>
     </footer>
     
     <button id="accessibilityBtn" onclick="openAccessibilityPanel()" aria-label="תפריט נגישות" style="position: fixed; bottom: 30px; left: 30px; width: 60px; height: 60px; border-radius: 50%; background: linear-gradient(135deg, #00C896 0%, #00A8E8 100%); border: none; cursor: pointer; z-index: 9999; display: flex; align-items: center; justify-content: center; box-shadow: 0 5px 25px rgba(0, 200, 150, 0.4); transition: all 0.3s ease; font-size: 28px;">♿</button>
@@ -1461,7 +1472,7 @@
                 <div style="background: rgba(0, 200, 150, 0.1); border: 1px solid rgba(0, 200, 150, 0.3); border-radius: 15px; padding: 20px; margin: 15px 0;">
                     <p><strong style="color: #00C896;">שם:</strong> ניר רם</p>
                     <p><strong style="color: #00C896;">טלפון:</strong> <a href="tel:+972522653170" style="color: #00C896;">052-265-3170</a></p>
-                    <p><strong style="color: #00C896;">דוא"ל:</strong> <a href="mailto:nir@gocio.org" style="color: #00C896;">nir@gocio.org</a></p>
+                    <p><strong style="color: #00C896;">דוא"ל:</strong> <a href="/cdn-cgi/l/email-protection#dfb1b6ad9fb8b0bcb6b0f1b0adb8" style="color: #00C896;"><span class="__cf_email__" data-cfemail="b7d9dec5f7d0d8d4ded899d8c5d0">[email&#160;protected]</span></a></p>
                 </div>
                 <h3 style="color: #00C896; margin: 25px 0 15px;">5. דיווח על בעיות נגישות</h3>
                 <p>אם נתקלתם בבעיית נגישות באתר, נשמח לשמוע מכם. אנו מתחייבים לטפל בכל פנייה בנושא נגישות תוך 14 ימי עסקים.</p>
@@ -1485,13 +1496,13 @@
                 <h3 style="color: #00C896; margin: 25px 0 15px;">3. כיצד אנו משתמשים במידע</h3>
                 <p>המידע משמש אך ורק ליצירת קשר חוזר, מתן שירותי ייעוץ ותמיכה, ושליחת מידע רלוונטי (רק אם ניתנה הסכמה).</p>
                 <h3 style="color: #00C896; margin: 25px 0 15px;">4. יצירת קשר</h3>
-                <p>📧 <a href="mailto:nir@gocio.org" style="color: #00C896;">nir@gocio.org</a> | 📱 <a href="tel:+972522653170" style="color: #00C896;">052-265-3170</a></p>
+                <p>📧 <a href="/cdn-cgi/l/email-protection#98f6f1ead8fff7fbf1f7b6f7eaff" style="color: #00C896;"><span class="__cf_email__" data-cfemail="355b5c4775525a565c5a1b5a4752">[email&#160;protected]</span></a> | 📱 <a href="tel:+972522653170" style="color: #00C896;">052-265-3170</a></p>
             </div>
             <button onclick="closePrivacyModal()" style="width: 100%; margin-top: 30px; padding: 15px; background: linear-gradient(135deg, #00C896 0%, #00A8E8 100%); border: none; border-radius: 50px; color: #000; font-size: 16px; font-weight: 700; cursor: pointer; font-family: 'Assistant', sans-serif;">סגור</button>
         </div>
     </div>
     
-    <script>
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
         function createParticles() { const container = document.getElementById('particles'); for (let i = 0; i < 30; i++) { const particle = document.createElement('div'); particle.className = 'particle'; particle.style.left = Math.random() * 100 + '%'; particle.style.animationDelay = Math.random() * 15 + 's'; particle.style.animationDuration = (15 + Math.random() * 10) + 's'; container.appendChild(particle); } }
         createParticles();
         
@@ -1533,9 +1544,4 @@
         function toggleStopAnimations() { document.body.classList.toggle('stop-animations'); }
         function resetAccessibility() { fontSize = 100; document.body.style.fontSize = '100%'; document.body.classList.remove('high-contrast', 'grayscale', 'underline-links', 'readable-font', 'big-cursor', 'stop-animations'); }
         
-        document.addEventListener('keydown', function(e) { if (e.key === 'Escape') { closeAccessibilityPanel(); closePrivacyModal(); closeAccessibilityStatement(); } });
-        document.getElementById('privacyModal').addEventListener('click', function(e) { if (e.target === this) { closePrivacyModal(); } });
-        document.getElementById('accessibilityStatementModal').addEventListener('click', function(e) { if (e.target === this) { closeAccessibilityStatement(); } });
-    </script>
-</body>
-</html>
+        document.addEventLis
