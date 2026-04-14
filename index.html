@@ -1216,7 +1216,7 @@
                 <a class="nav-link" href="#experience">ניסיון</a>
                 <a class="nav-link" href="#why-me">ניר רם</a>
                 <a class="nav-link" href="#contact">צור קשר</a>
-                <a class="cta-nav-btn" href="/it-health-check.html" target="_blank">🔍 בדוק את מצב ה-IT בארגונך — ללא עלות</a>
+                <a class="cta-nav-btn" href="/it-health-check.html" target="_blank">בדוק את מצב ה-IT בארגונך — ללא עלות</a>
             </div>
         </div>
     </nav>
@@ -1237,7 +1237,7 @@
                     <div class="stat"><div class="stat-number" data-target="4">0</div><div class="stat-label">תפקידי מנמ"ר</div></div>
                     <div class="stat"><div class="stat-number" data-target="100">0</div><div class="stat-label">% מחויבות</div></div>
                 </div>
-                <div class="hero-cta"><a href="/it-health-check.html" target="_blank" class="cta-nav-btn">🔍 בדוק את מצב ה-IT בארגונך — ללא עלות</a></div>
+                <div class="hero-cta"><a href="/it-health-check.html" target="_blank" class="cta-nav-btn">בדוק את מצב ה-IT בארגונך — ללא עלות</a></div>
             </div>
         </div>
         <div class="scroll-indicator"><span></span></div>
@@ -1533,7 +1533,7 @@
                 <p>באמצעות טופס יצירת הקשר: שם מלא, כתובת דואר אלקטרוני, מספר טלפון (אופציונלי), שם החברה (אופציונלי), תוכן ההודעה.</p>
                 <h3 style="color: #00C896; margin: 25px 0 15px;">3. כיצד אנו משתמשים במידע</h3>
                 <p>המידע משמש אךh3>
-                <p>📧 <a href="/cdn-cgi/l/email-protection#97f9fee5d7f0f8f4fef8b9f8e5f0" style="color: #00C896;"><span class="__cf_email__" data-cfemail="8fe1e6fdcfe8e0ece6e0a1e0fde8">[email&#160;protected]</span></a> | 📱 <a href="tel:+972522653170" style="color: #00C896;">052-265-3170</a></p>
+                <p>📧 <a href="/cdn-cgi/l/email-protection#a0cec9d2e0c7cfc3c9cf8ecfd2c7" style="color: #00C896;"><span class="__cf_email__" data-cfemail="a2cccbd0e2c5cdc1cbcd8ccdd0c5">[email&#160;protected]</span></a> | 📱 <a href="tel:+972522653170" style="color: #00C896;">052-265-3170</a></p>
             </div>
             <button onclick="closePrivacyModal()" style="width: 100%; margin-top: 30px; padding: 15px; background: linear-gradient(135deg, #00C896 0%, #00A8E8 100%); border: none; border-radius: 50px; color: #000; font-size: 16px; font-weight: 700; cursor: pointer; font-family: 'Assistant', sans-serif;">סגור</button>
         </div>
@@ -1553,11 +1553,11 @@
         const navLinks = document.querySelectorAll('.nav-link');
         window.addEventListener('scroll', () => { let current = ''; sections.forEach(section => { if (window.scrollY >= section.offsetTop - 150) { current = section.getAttribute('id'); } }); navLinks.forEach(link => { link.classList.remove('active'); if (link.getAttribute('href') === '#' + current) { link.classList.add('active'); } }); });
         
-        function reveal() { document.querySelectorAll('.reveal, .reveal-left, .reveal-right, .reveal-scale').forEach(el => { const top = el.getBoundingClientRect().top; if (top < window.innerHeight - 50 || top < 0) { setTimeout(() => { el.classList.add('active'); }, el.dataset.delay || 0); } }); }
+        function reveal() { document.querySelectorAll('.reveal, .reveal-left, .reveal-right, .reveal-scale').forEach(el => { if (el.getBoundingClientRect().top < window.innerHeight - 150) { setTimeout(() => { el.classList.add('active'); }, el.dataset.delay || 0); } }); }
         window.addEventListener('scroll', reveal);
-        setTimeout(reveal, 100);
+        reveal();
         
-        function animateCounters() { document.querySelectorAll('.stat-number').forEach(counter => { const target = parseInt(counter.dataset.target); const run = () => { let current = 0; const increment = target / 125; const updateCounter = () => { current += increment; if (current < target) { counter.textContent = Math.ceil(current) + (target === 100 ? '%' : '+'); requestAnimationFrame(updateCounter); } else { counter.textContent = target + (target === 100 ? '%' : '+'); } }; updateCounter(); }; const rect = counter.getBoundingClientRect(); if (rect.top < window.innerHeight && rect.bottom > 0) { run(); } else { const observer = new IntersectionObserver((entries) => { entries.forEach(entry => { if (entry.isIntersecting) { run(); observer.unobserve(entry.target); } }); }, { threshold: 0.1 }); observer.observe(counter); } }); }
+        function animateCounters() { document.querySelectorAll('.stat-number').forEach(counter => { const target = parseInt(counter.dataset.target); const observer = new IntersectionObserver((entries) => { entries.forEach(entry => { if (entry.isIntersecting) { let current = 0; const increment = target / 125; const updateCounter = () => { current += increment; if (current < target) { counter.textContent = Math.ceil(current) + (target === 100 ? '%' : '+'); requestAnimationFrame(updateCounter); } else { counter.textContent = target + (target === 100 ? '%' : '+'); } }; updateCounter(); observer.unobserve(entry.target); } }); }, { threshold: 0.5 }); observer.observe(counter); }); }
         animateCounters();
         
         document.querySelectorAll('.accordion-header').forEach(header => { header.addEventListener('click', () => { const item = header.parentElement; const wasActive = item.classList.contains('active'); document.querySelectorAll('.accordion-item').forEach(i => { i.classList.remove('active'); }); if (!wasActive) { item.classList.add('active'); } }); });
@@ -1582,4 +1582,11 @@
         function resetAccessibility() { fontSize = 100; document.body.style.fontSize = '100%'; document.body.classList.remove('high-contrast', 'grayscale', 'underline-links', 'readable-font', 'big-cursor', 'stop-animations'); }
         
         document.addEventListener('keydown', function(e) { if (e.key === 'Escape') { closeAccessibilityPanel(); closePrivacyModal(); closeAccessibilityStatement(); } });
-        document.getElementById('privacyModal').addEventListener('click', function(e) { if (e.target ===
+        document.getElementById('privacyModal').addEventListener('click', function(e) { if (e.target === e.detail.startIndex) { closePrivacyModal(); }
+        });
+        document.getElementById('accessibilityStatementModal').addEventListener('click', function(e) {
+            if (e.target === document.getElementById('accessibilityStatementModal')) { closeAccessibilityStatement(); }
+        });
+    </script>
+</body>
+</html>
