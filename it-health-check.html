@@ -831,7 +831,7 @@ function render(){
 
   let h='';
   s.qs.forEach((q,i)=>{
-    h+='<div class="qblock"><div class="qt">'+(i+1)+'. '+q.t+'</div><div class="opts">';
+    h+='<div class="qblock"><div class="qt">'+(cur*5+i+1)+'. '+q.t+'</div><div class="opts">';
     q.opts.forEach((o,j)=>{
       const sel=ans[q.id]===j?' sel':'';
       h+='<div class="opt'+sel+'" onclick="pick(\''+q.id+'\','+j+',this)"><div class="dot"></div>'+o+'</div>';
